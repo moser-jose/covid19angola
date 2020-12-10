@@ -7,6 +7,7 @@ import Api from '../api/Api';
 import Separador from './Separador';
 import {VictoryScatter,VictoryLine,VictoryLabel,VictoryAxis, VictoryChart, VictoryTheme } from "victory-native";
 import moment from 'moment';
+import 'moment/locale/pt';
 
 const DivGraf = styled.View`
     flex:1;
@@ -29,7 +30,7 @@ const Loading = styled.ActivityIndicator`
     color:${props=>props.theme.color};
 `;
 export function GraficoLinhaCasos({country}) {
-  
+  moment.locale('pt');
   const [dataCasos, setDataCasos] = useState({});
   const [state,dispach]=useStateValue();
   const [width,setWidth]=useState(0);
@@ -44,7 +45,7 @@ export function GraficoLinhaCasos({country}) {
     for (let date in data) {
       if (lastDataPoint) {
         let newDataPoint = {
-          x:moment(date).format('ll'),
+          x:moment(date).format('L'),
           y: data[date] - lastDataPoint,
           u:formatarNumero(data[date] - lastDataPoint)
         };
@@ -54,15 +55,6 @@ export function GraficoLinhaCasos({country}) {
     } 
     return chartDataActive;
   };
-  moment.updateLocale('pt',{
-    months: 'Janeiro_Fevereiro_Março_Abril_Maio_Junho_Julho_Agosto_Setembro_Outubro_Novembro_Dezembro'.split(
-        '_'
-    ),
-    longDateFormat: {
-        LLLL: 'DD [de] MMMM [de] YYYY [às] HH:mm',
-        ll: 'DD/MMM'
-    },
-  })
   useEffect(() => {
     let isMounted = true;
 
@@ -88,7 +80,7 @@ export function GraficoLinhaCasos({country}) {
         : 
         dataCasos?.length > 0 && (
           <DivGraf>
-    <Separador titulo={"Novos Casos"} descricao={"Novos casos de Covid19 nos Últimos 7 dias"}></Separador>
+    <Separador titulo={"Novos Casos"} descricao={"Novos casos da Covid-19 nos Últimos 7 dias"}></Separador>
     <DivCont onLayout={(event) => {
         var {x, y, width, height} = event.nativeEvent.layout;
         setWidth(width);
@@ -117,6 +109,7 @@ export function GraficoLinhaCasos({country}) {
   );
 }
 export function GraficoLinhaRecuperados({country}) {
+  moment.locale('pt');
   const [dataRecuperdos, setDataRecuperados] = useState({});
   const [state,dispach]=useStateValue();
   const [width,setWidth]=useState(0);
@@ -131,7 +124,7 @@ export function GraficoLinhaRecuperados({country}) {
     for (let date in data) {
       if (lastDataPoint) {
         let newDataPoint = {
-          x:moment(date).format('ll'),
+          x:moment(date).format('L'),
           y: data[date] - lastDataPoint,
           u:formatarNumero(data[date] - lastDataPoint)
         };
@@ -141,15 +134,6 @@ export function GraficoLinhaRecuperados({country}) {
     } 
     return chartDataActive;
   };
-  moment.updateLocale('pt',{
-    months: 'Janeiro_Fevereiro_Março_Abril_Maio_Junho_Julho_Agosto_Setembro_Outubro_Novembro_Dezembro'.split(
-        '_'
-    ),
-    longDateFormat: {
-        LLLL: 'DD [de] MMMM [de] YYYY [às] HH:mm',
-        ll: 'DD/MMM'
-    },
-  })
   useEffect(() => {
     let isMounted = true;
 
@@ -175,7 +159,7 @@ export function GraficoLinhaRecuperados({country}) {
         : 
         dataRecuperdos?.length > 0 && (
           <DivGraf>
-    <Separador titulo={"Novos Recuperados"} descricao={"Novos recuperados de Covid19 nos Últimos 7 dias"}></Separador>
+    <Separador titulo={"Novos Recuperados"} descricao={"Novos recuperados da Covid-19 nos Últimos 7 dias"}></Separador>
     <DivCont onLayout={(event) => {
         var {x, y, width, height} = event.nativeEvent.layout;
         setWidth(width);
@@ -205,7 +189,7 @@ export function GraficoLinhaRecuperados({country}) {
     }
 
 export function GraficoLinhaMortes({country}) {
-  
+  moment.locale('pt');
   const [dataMortes, setDataMortes] = useState({});
   const [state,dispach]=useStateValue();
   const [width,setWidth]=useState(0);
@@ -220,7 +204,7 @@ export function GraficoLinhaMortes({country}) {
     for (let date in data) {
       if (lastDataPoint) {
         let newDataPoint = {
-          x:moment(date).format('ll'),
+          x:moment(date).format('L'),
           y: data[date] - lastDataPoint,
           u:formatarNumero(data[date] - lastDataPoint)
         };
@@ -230,15 +214,6 @@ export function GraficoLinhaMortes({country}) {
     } 
     return chartDataActive;
   };
-  moment.updateLocale('pt',{
-    months: 'Janeiro_Fevereiro_Março_Abril_Maio_Junho_Julho_Agosto_Setembro_Outubro_Novembro_Dezembro'.split(
-        '_'
-    ),
-    longDateFormat: {
-        LLLL: 'DD [de] MMMM [de] YYYY [às] HH:mm',
-        ll: 'DD/MMM'
-    },
-  })
   useEffect(() => {
     let isMounted = true;
 
@@ -265,7 +240,7 @@ export function GraficoLinhaMortes({country}) {
         : 
         dataMortes?.length > 0 && (
           <DivGraf>
-    <Separador titulo={"Novas Mortes"} descricao={"Novas mortes de Covid19 nos Últimos 7 dias"}></Separador>
+    <Separador titulo={"Novas Mortes"} descricao={"Novas mortes da Covid-19 nos Últimos 7 dias"}></Separador>
     <DivCont onLayout={(event) => {
         var {x, y, width, height} = event.nativeEvent.layout;
         setWidth(width);

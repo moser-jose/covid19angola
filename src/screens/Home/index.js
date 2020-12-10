@@ -7,8 +7,6 @@ import PercentagemCovid from '../../components/PercentagemCovid';
 import {useStateValue} from '../../state/ContextProvider';
 import Separador from '../../components/Separador';
 import Api from '../../api/Api';
-import Numeral from 'numeral';
-import "numeral/locales/pt-pt";
 import { 
     Container,
     Scroler,
@@ -18,7 +16,6 @@ import {
 } from './styles';
 
 export default () => {
-    Numeral.locale('pt-pt');
     const [state,dispach]=useStateValue();
     const [loading, setLoading]=useState(false);
     const [data, setData]=useState([]);

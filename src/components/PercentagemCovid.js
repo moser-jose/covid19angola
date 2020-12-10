@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import Numeral from 'numeral';
-import "numeral/locales/pt-pt";
 import Separador from './Separador';
-import { VictoryClipContainer,VictoryScatter,VictoryLine,VictoryArea,VictoryBoxPlot,VictoryPie, VictoryBar, VictoryChart, VictoryTheme } from "victory-native";
+import { VictoryPie } from "victory-native";
 import {GraficoLinhaCasos,GraficoLinhaRecuperados,GraficoLinhaMortes} from './GraficoLinha';
 const Container = styled.View`
     flex:1;
@@ -51,7 +49,6 @@ const DivContperc = styled.View`
     
 `;
 export default({dados}) =>{
-    Numeral.locale('pt-pt');
     const round = (num, places) => {
         if (!("" + num).includes("e")) {
             return +(Math.round(num + "e+" + places)  + "e-" + places);

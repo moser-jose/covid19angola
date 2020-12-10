@@ -2,6 +2,7 @@ import React,{useEffect} from 'react';
 import styled from 'styled-components/native';
 import IconRefresh from '../assets/img/refresh.svg';
 import moment, { now } from 'moment';
+import 'moment/locale/pt';
 import {useStateValue} from '../state/ContextProvider';
 
 const Container = styled.View`
@@ -36,21 +37,13 @@ const Texto = styled.Text`
 
 export default({onp,dados}) =>{
     const [state,dispach]=useStateValue();
-    moment.updateLocale('pt',{
-        months: 'Janeiro_Fevereiro_Março_Abril_Maio_Junho_Julho_Agosto_Setembro_Outubro_Novembro_Dezembro'.split(
-            '_'
-        ),
-        longDateFormat: {
-            LLLL: 'DD [de] MMMM [de] YYYY [às] HH:mm',
-            ll: 'MMM YYYY'
-        },
-    })
+    moment.locale('pt');
     return(
         <Container>
             <ContainerDireita>
                 <Titulo>Novos Resultados</Titulo>
                 
-                <Texto>Última Atualização: {moment(dados).format('LLLL')}</Texto>
+                <Texto>Última Atualização: {moment(dados).format('LLL')}</Texto>
             </ContainerDireita>
             <ContainerEsquerda onPress={onp}>
                 <IconRefresh fill={state.theme.color}></IconRefresh>

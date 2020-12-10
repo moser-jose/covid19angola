@@ -5,7 +5,7 @@ import {useStateValue} from '../state/ContextProvider';
 import styled from 'styled-components/native';
 
 const Voltar = styled.Text`
-    font-size:12px;
+    font-size:16px;
     font-family:"Poppins-Bold";
     color:${props=>props.theme.color};
     margin-left:4px;
@@ -27,7 +27,7 @@ export default () => {
 
     return(
         <Back onPress={handleClickBack}>
-            <IconBack fill={state.theme.color} width="18" height="18"></IconBack>
+            <IconBack fill={state.theme.color} width="22" height="22"></IconBack>
             <Voltar>Voltar</Voltar>
         </Back>
     );
