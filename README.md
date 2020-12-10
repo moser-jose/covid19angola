@@ -1,6 +1,6 @@
 # Covid19 Tracker Angola 
 
-App Mobile para as estatísticas do Covid19 em Angola e ao redor do mundo, feito com `React Native`
+App Mobile para as estatísticas do Covid-19 em Angola e ao redor do mundo, feito com `React Native`
 
 <p align="center">
     <img src="src/assets/img/logo.svg" width="20%">
@@ -8,9 +8,9 @@ App Mobile para as estatísticas do Covid19 em Angola e ao redor do mundo, feito
 
  <div align="center">
 
-[![Version](https://img.shields.io/github/package-json/v/moser-jose/covid19tracker)](https://github.com/moser-jose/covid19tracker)
-[![Last Commit](https://img.shields.io/github/last-commit/moser-jose/covid19tracker)](https://github.com/moser-jose/covid19tracker)
-[![The MIT License](https://img.shields.io/github/license/moser-jose/covid19tracker)](http://opensource.org/licenses/MIT)
+[![Version](https://img.shields.io/github/package-json/v/moser-jose/covid19angola)](https://github.com/moser-jose/covid19angola)
+[![Last Commit](https://img.shields.io/github/last-commit/moser-jose/covid19angola)](https://github.com/moser-jose/covid19angola)
+[![The MIT License](https://img.shields.io/github/license/moser-jose/covid19angola)](http://opensource.org/licenses/MIT)
 [![Autor](https://img.shields.io/static/v1?label=autor&message=moser-jose&color=red)](https://github.com/moser-jose?tab=repositories)
 
 
@@ -39,25 +39,24 @@ Todos os requisitos aqui listados são indispensáveis para o desenvolvimento do
 
 #### Os pacotes podem ser instalados a partir do `npm` ou `yarn`
 
-    @react-native-community/async-storage,
-    @react-native-community/masked-view,
-    @react-navigation/bottom-tabs,
-    @react-navigation/native,
-    @react-navigation/stack,
-    moment,
-    numeral,
-    react,
-    react-native,
-    react-native-gesture-handler,
-    react-native-permissions,
-    react-native-reanimated,
-    react-native-safe-area-context,
-    react-native-screens,
-    react-native-svg,
-    react-native-svg-transformer,
-    react-native-swiper,
-    styled-components,
-    victory-native
+    "@react-native-community/async-storage": "^1.12.1",
+    "@react-native-community/masked-view": "^0.1.10",
+    "@react-navigation/bottom-tabs": "^5.11.2",
+    "@react-navigation/native": "^5.8.10",
+    "@react-navigation/stack": "^5.12.8",
+    "moment": "^2.29.1",
+    "numeral": "^2.0.6",
+    "react": "16.13.1",
+    "react-native": "0.63.4",
+    "react-native-gesture-handler": "^1.9.0",
+    "react-native-maps": "0.27.1",
+    "react-native-reanimated": "^1.13.2",
+    "react-native-safe-area-context": "^3.1.9",
+    "react-native-screens": "^2.15.0",
+    "react-native-svg": "^12.1.0",
+    "react-native-svg-transformer": "^0.14.3",
+    "styled-components": "^5.2.1",
+    "victory-native": "^35.3.1"
 
 ### Android
 
@@ -71,7 +70,7 @@ Todos os requisitos aqui listados são indispensáveis para o desenvolvimento do
 
 ## Agradecimentos
 
-Ao pessoal do [disease.sh](https://disease.sh/) por possuirem a melhor ``api`` free para rastreio do Covid19, veja o projecto deles [aqui](https://github.com/disease-sh/api). Ao pessoal do [Piqodesign](https://dribbble.com/Piqodesign) por permitir utilizar os ``ícones`` para a `TabBar`. Ao pessoal da [drawkit.io](https://www.drawkit.io) permitir utilizar os Pack de ícones que podem ser encontrados [aqui](https://www.drawkit.io/product/covid-19).  
+Ao pessoal do [disease.sh](https://disease.sh/) por possuirem a melhor ``api`` free para rastreio do Covid-19, veja o projecto deles [aqui](https://github.com/disease-sh/api). Ao pessoal do [Piqodesign](https://dribbble.com/Piqodesign) por permitir utilizar os ``ícones`` para a `TabBar`. Ao pessoal da [drawkit.io](https://www.drawkit.io) permitir utilizar os Pack de ícones que podem ser encontrados [aqui](https://www.drawkit.io/product/covid-19).  
 
 ## Como contribuir
 

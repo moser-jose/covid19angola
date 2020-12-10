@@ -6,7 +6,6 @@ import ContainerTitulo from '../../components/ContainerTitulo';
 import PercentagemCovid from '../../components/PercentagemCovid';
 import {useStateValue} from '../../state/ContextProvider';
 import Separador from '../../components/Separador';
-
 import Api from '../../api/Api';
 import Numeral from 'numeral';
 import "numeral/locales/pt-pt";
