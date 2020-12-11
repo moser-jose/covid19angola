@@ -1,6 +1,8 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import styled from 'styled-components/native';
 import {useStateValue} from '../state/ContextProvider';
+import Logo from '../assets/img/logo.svg';
+
 const TituloApp = styled.Text`
     color:${props=>props.theme.color};
     font-size:18px;
@@ -17,15 +19,12 @@ const ContainerTitulo = styled.View`
 `;
 
 const Imagem = styled.View`
-    /* border-radius:50%; */
     justify-content:center;
     align-items:center;
     overflow:hidden;
-    width:30px;
-    height:30px;
-    border-radius:15px;
-    elevation:2;
-    border:1px solid ${props=>props.theme.color};
+    width:35px;
+    height:35px;
+    border-radius:15px; 
 `;
 const Image = styled.Image`
 `;
@@ -40,17 +39,22 @@ export default ({titulo,bandeira}) => {
                         Covid-19 {titulo}
                     </TituloApp>
                     <Imagem>
-                        <Image
-                        source= {bandeira ==1 ? 
-                            require('../assets/img/angola.png')
-                        : 
-                        state.theme.color=="#F2F6F8" ?
-                            require("../assets/img/globe-white.png")
-                        :
-                            require("../assets/img/globe.png")
+
+                        {
+                            bandeira == 1 ?
+                            <Logo  width= "35" height="35"></Logo>
+                            :
+                            <Image
+                                source= {
+                                state.theme.color=="#F2F6F8" ?
+                                    require("../assets/img/globe-white.png")
+                                :
+                                    require("../assets/img/globe.png")
+                                }
+                                style={{ width: 35, height: 35 }}
+                            ></Image>
                         }
-                        style={{ width: 40, height: 40 }}
-                    ></Image>
+                        
                     </Imagem>
                     
                 </ContainerTitulo>

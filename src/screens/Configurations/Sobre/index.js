@@ -34,7 +34,7 @@ export default () => {
                 <TituloBold>Covid-19 Angola</TituloBold>
                 <TituloLightItalic>Proteja-se a si e a sua família </TituloLightItalic>
             </TituloApp>
-                <RedesTexto style={{lineHeight:18, marginBottom:20, marginTop:20}}>App Mobile para visualização das estatísticas do Covid19 em Angola e ao redor do mundo.</RedesTexto>
+                <RedesTexto style={{lineHeight:18, marginBottom:20, marginTop:20}}>App Mobile para visualização das estatísticas da Covid-19 em Angola e ao redor do mundo.</RedesTexto>
                 
                 <Vers><Versao>Versão 1.0.1</Versao></Vers>
             
@@ -43,7 +43,7 @@ export default () => {
                 <RedesTexto>Disease.sh</RedesTexto>
                 <IconSend fill={state.theme.color} width="20" height="20" />
             </Redes>
-            <Redes onPress={() => Linking.openURL('https://instagran.com/Piqo.desin')}>
+            <Redes onPress={() => Linking.openURL('https://instagran.com/piqodesin')}>
                 <RedesTexto>Piqodesign</RedesTexto>
                 <IconSend fill={state.theme.color} width="20" height="20" />
             </Redes>

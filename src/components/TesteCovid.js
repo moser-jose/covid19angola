@@ -43,7 +43,7 @@ export default() =>{
                 </ContainerDireita>
                 <ContainerEsquerda>
                     <Titulo>Fique em casa</Titulo>
-                    <Texto>A Covid19 é uma doença altamente transmissível, fique em casa e esteja seguro.</Texto>
+                    <Texto>A Covid-19 é uma doença altamente transmissível, fique em casa e esteja seguro.</Texto>
                 </ContainerEsquerda>
 
             </Container>

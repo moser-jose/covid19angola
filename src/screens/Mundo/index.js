@@ -1,11 +1,11 @@
 import React,{useState,useEffect} from 'react';
 import MundoCovid from '../../components/MundoCovid';
 import Api from '../../api/Api';
-import Numeral from 'numeral';
-import "numeral/locales/pt-pt";
 import ContainerTitulo from '../../components/ContainerTitulo';
 import {useStateValue} from '../../state/ContextProvider';
-const customMapStyleRetro=[
+import customMapStyleNight from '../../assets/themes/customMapStyleNight';
+import customMapStyleRetro from '../../assets/themes/customMapStyleRetro';
+const customMapStyleRetro1=[
     {
       "elementType": "geometry",
       "stylers": [
@@ -254,7 +254,7 @@ const customMapStyleRetro=[
       ]
     }
 ]
-const customMapStyleNight= [
+const customMapStyleNight2= [
   {
     "elementType": "geometry",
     "stylers": [
@@ -449,7 +449,6 @@ import {
 
 
 export default () => {
-  Numeral.locale('pt-pt');
     const [data,setData]=useState([]);
     const [state,dispach]=useStateValue();
     const [dataAllContries,setDatadataAllContries]=useState([]);
@@ -458,7 +457,6 @@ export default () => {
     const [strokeColor, setStrokeColor]=useState('#ff8040');
     const [covid, setCovid]=useState('');
     const [dataMundo,setdataMundo]=useState([]);
-    const [mapTheme,setmapTheme]=useState(customMapStyleRetro);
     const getPaises = async () => {
         setLoading(true);
         let resAll =await Api.getAngola();

@@ -88,7 +88,7 @@ export const Vers = styled.View`
 export const Versao = styled.Text`
     background-color:#FF4B63;
     padding:4px 10px;
-    border-radius:6px;
+    border-radius:3px;
     font-size:10px;
     color:#FFF;
     font-family:"Poppins-Bold";

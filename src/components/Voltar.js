@@ -27,7 +27,7 @@ export default () => {
 
     return(
         <Back onPress={handleClickBack}>
-            <IconBack fill={state.theme.color} width="22" height="22"></IconBack>
+            <IconBack fill={state.theme.color} width="26" height="26"></IconBack>
             <Voltar>Voltar</Voltar>
         </Back>
     );
