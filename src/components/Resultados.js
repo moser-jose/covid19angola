@@ -96,7 +96,7 @@ const TituloDado = styled.Text`
 const TituloDadoNew = styled.Text`
     font-family:"Poppins-Bold";
     letter-spacing:1px;
-    font-size:10px;
+    font-size:9px;
     text-align:right;
     margin-right:2px;
     color:${props=>props.theme.color};
@@ -128,7 +128,7 @@ export default({dados}) =>{
                             </Dados>
                             <Dados>
                                 <DadosCont>
-                                <TituloDadoCritico>Em estado crítico</TituloDadoCritico>
+                                <TituloDadoCritico>Estado crítico</TituloDadoCritico>
                                         <TextoCont>
                                         <CriticosIcon width="24" height="24"></CriticosIcon>
                                         <TituloDado >{formatarNumero(dados.critical)}</TituloDado>

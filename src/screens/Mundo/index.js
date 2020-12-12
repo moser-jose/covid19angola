@@ -3,9 +3,7 @@ import MundoCovid from '../../components/MundoCovid';
 import Api from '../../api/Api';
 import ContainerTitulo from '../../components/ContainerTitulo';
 import {useStateValue} from '../../state/ContextProvider';
-import customMapStyleNight from '../../assets/themes/customMapStyleNight';
-import customMapStyleRetro from '../../assets/themes/customMapStyleRetro';
-const customMapStyleRetro1=[
+const customMapStyleRetro=[
     {
       "elementType": "geometry",
       "stylers": [
@@ -254,7 +252,7 @@ const customMapStyleRetro1=[
       ]
     }
 ]
-const customMapStyleNight2= [
+const customMapStyleNight= [
   {
     "elementType": "geometry",
     "stylers": [
@@ -537,22 +535,22 @@ export default () => {
           {
                 dataAllContries.map((value, index) =>(
                     <Circle
-                    key={index}
-                        center={{ latitude:value.countryInfo.lat,
-                                  longitude:value.countryInfo.long
-                                }}
+                      key={index}
+                          center={{ latitude:value.countryInfo.lat,
+                                    longitude:value.countryInfo.long
+                                  }}
+                                  
+                          radius={
+                                covid =='cases' ? Math.sqrt(value.cases) * 800 : 
+                                covid =='recovered'? Math.sqrt(value.recovered) * 800 : 
+                                covid =='deaths' ? Math.sqrt(value.deaths) * 800 :
+                                covid =='active' ? value.active < 0 ?  Math.sqrt(value.active*-1) * 800 :Math.sqrt(value.active) *800 : 
+                                covid =='critical' && Math.sqrt(value.critical) * 800
                                 
-                        radius={
-                              covid =='cases' ? Math.sqrt(value.cases) * 800 : 
-                              covid =='recovered'? Math.sqrt(value.recovered) * 800 : 
-                              covid =='deaths' ? Math.sqrt(value.deaths) * 800 :
-                              covid =='active' ? value.active < 0 ?  Math.sqrt(value.active*-1) * 800 :Math.sqrt(value.active) *800 : 
-                              covid =='critical' && Math.sqrt(value.critical) * 800
-                              
-                        }
-                        strokeWidth={2}
-                        strokeColor={strokeColor}
-                        fillColor={fillColor}
+                          }
+                          strokeWidth={2}
+                          strokeColor={strokeColor}
+                          fillColor={fillColor}
                     />
                     ))
             }

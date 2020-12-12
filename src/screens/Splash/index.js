@@ -18,16 +18,16 @@ import Logo from '../../assets/img/logo.svg';
 export default () => {
     const [state,dispach]=useStateValue();
     const navigation=useNavigation();
+    const entrar =()=>{
+        setTimeout(() => {
+            navigation.reset({
+                routes:[{name:'SplashTips1'}]
+            });
+        },150);
+    }
     useEffect(()=>{
-        const entrar =()=>{
-            setTimeout(() => {
-                navigation.reset({
-                    routes:[{name:'MainTab'}]
-                });
-            },100);
-        }
         entrar();
-    });
+    },[]);
 
     return(
         <Container>

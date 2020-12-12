@@ -16,11 +16,12 @@ const TextoTema = styled.Text`
     
 `;
 const TextoTemaLight = styled.Text`
-    font-size:12px;
+    font-size:10px;
     color:${props=>props.theme.color};
     font-family:"Poppins-Regular";
-    margin-top:-6px;
+    margin-top:-4px;
     margin-bottom:10px;
+    letter-spacing:.5px;
 
 `;
 

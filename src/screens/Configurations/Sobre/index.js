@@ -51,6 +51,10 @@ export default () => {
                 <RedesTexto>drawkit.io</RedesTexto>
                 <IconSend fill={state.theme.color} width="20" height="20" />
             </Redes>
+            <Redes onPress={() => Linking.openURL('https://www.uplabs.com/posts/covid-19-illustrations')}>
+                <RedesTexto>@manojkeet</RedesTexto>
+                <IconSend fill={state.theme.color} width="20" height="20" />
+            </Redes>
             <RedesTextoDef>Developer</RedesTextoDef>
             <RedesDev>
                 <RedesTexto>@moser-jose</RedesTexto>

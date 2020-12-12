@@ -13,5 +13,6 @@ export default{
     homeBoFillIcon:"#F4F7FA",
     firstIconSearch:"#1D1E21",
     secondIconSearch:"#1D1E21",
-    mundoContainer:"#777D82"
+    mundoContainer:"#777D82",
+    pontinhos:"rgba(255,255,255,.3)"
 }
