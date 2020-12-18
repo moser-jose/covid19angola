@@ -21,12 +21,6 @@ export default () => {
     data: route.params.data,
     countryInfo: route.params.countryInfo
 });
-    useEffect(()=>{
-          
-    },[]);
-    
-
-
     return(
         
         <ContainerMap>

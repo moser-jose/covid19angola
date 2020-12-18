@@ -20,9 +20,10 @@ import {
     TextoContinente,
     TextoContinenteTexto,
     DadosDetalhes,
-    VoltarContainer
-
-    
+    VoltarContainer,
+    MapaContainer,
+    Botao,
+    BotaoText
 } from './styles';
 
 export default () => {
@@ -46,6 +47,13 @@ export default () => {
         critical: route.params.critical,
         tests: route.params.tests
     });
+    
+    const handelerClick =()=>{
+        navigation.navigate('Mapa',{
+            data:paisInfo,
+            countryInfo:paisInfo.countryInfo
+        });
+    };
     return(
         <Container>
             <Bandeira>
@@ -63,7 +71,7 @@ export default () => {
             </Bandeira>
             
             <DadosDetalhes>
-                
+            <MapaContainer>
             <DadosPais>
                     <Titulo>
                         <TextoPais>{paisInfo.country}</TextoPais>
@@ -94,7 +102,13 @@ export default () => {
                         
                     </Titulo>
                 </DadosPais>
-            
+                
+                        <Botao onPress={handelerClick}>
+                            <BotaoText>
+                                Ver Mapa
+                            </BotaoText>
+                        </Botao>
+                    </MapaContainer>
             </DadosDetalhes>
             <Scroler>
                 <Resultados dados={paisInfo}></Resultados>

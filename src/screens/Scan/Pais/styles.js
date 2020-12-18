@@ -10,13 +10,13 @@ export const Bandeira = styled.View`
     height:150px;
 `;
 export const DadosPais = styled.View`
-    width:100%;
+   /*  width:100%;
     height:100px;
-    margin:1px 1px 20px 1px;
+    
     background-color:${props=>props.theme.container};;
     elevation:2;
     border-radius:8px;
-    padding:20px;
+    padding:20px; */
     /* position:absolute; */
     /* top:-10px; */
 `;
@@ -54,9 +54,31 @@ export const TextoContinenteTexto = styled.Text`
     font-family:"Poppins-Medium";
     color:${props=>props.theme.color};
 `;
-export const DadosDetalhes = styled.View`
-    padding:20px 20px 0 20px ;
-`;
+
 export const VoltarContainer = styled.View`
     padding-left:20px;
+`;
+export const DadosDetalhes = styled.View`
+    padding:20px;
+`;
+export const MapaContainer = styled.View`
+   width:100%;
+    background-color:${props=>props.theme.container};;
+    elevation:2;
+    border-radius:8px;
+    padding:10px;
+`;
+export const Botao = styled.TouchableOpacity`
+    justify-content:center;
+    width:100%;
+    align-items:center;margin-top:20px;
+`;
+export const BotaoText = styled.Text`
+    font-family:"Poppins-Bold";
+    font-size:12px;
+    color:${props=>props.theme.background};
+    background-color:${props=>props.theme.color};
+    padding:4px 30px;
+    border-radius:4px;
+    letter-spacing:1px;
 `;
