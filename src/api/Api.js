@@ -1,7 +1,6 @@
 import AsyncStorage from '@react-native-community/async-storage';
 
 const Basic_Api="https://disease.sh/v3/covid-19/countries/angola?yesterday=1";
-//https://api.covid19api.com/summary
 export default {
     getAll: async () => {
         const req = await fetch('https://disease.sh/v3/covid-19/all');

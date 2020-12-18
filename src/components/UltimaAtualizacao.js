@@ -8,7 +8,7 @@ import {useStateValue} from '../state/ContextProvider';
 const Container = styled.View`
     width:100%;
     flex-direction:row;
-    margin:20px 0;
+    margin-bottom:20px;
 `;
 const ContainerDireita = styled.View`
 `;

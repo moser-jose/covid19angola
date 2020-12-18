@@ -40,7 +40,6 @@ const TabItemHome = styled.TouchableOpacity`
     elevation:2;
 `;
 
-
 export default ({state, navigation}) => {
     const [stat,dispach]=useStateValue();
     const goTo=(screenName) => {

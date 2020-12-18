@@ -29,6 +29,7 @@ export default () => {
         let res =await Api.getAngola();
         setData(res);
         setDataCopia(res);
+        
         setLoading(false);
         
     }
@@ -47,6 +48,7 @@ export default () => {
     useEffect(()=>{
         getPaises();
     },[]);
+    console.log(data);
     return(
         <Container>
                 <ContainerTituloDiferente titulo="Tracker" bandeira={2}>

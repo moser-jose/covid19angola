@@ -77,6 +77,18 @@ export const RedesDev= styled.View`
     border-radius:4px;
     justify-content:space-between;
 `;
+export const RedesDevDev= styled.TouchableOpacity`
+    flex-direction:row;
+    align-items:center;
+    background-color:${props=>props.theme.container};
+    padding:10px;
+    elevation:2;
+    margin:4px 1px;
+    border-radius:4px;
+    justify-content:space-between;
+`;
+
+
 export const Social = styled.TouchableOpacity`
     
 `;

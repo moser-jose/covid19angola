@@ -4,6 +4,7 @@ import MainTab from '../stacks/MainTab';
 import Temas from '../screens/Configurations/Temas/';
 import Sobre from '../screens/Configurations/Sobre/';
 import Pais from '../screens/Scan/Pais';
+import Mapa from '../screens/Scan/Mapa';
 import Splash from '../screens/Splash';
 import SplashTips1 from '../screens/Splash/SplashTips/SplashTips1';
 import SplashTips2 from '../screens/Splash/SplashTips/SplashTips2';
@@ -28,5 +29,6 @@ export default () => (
   <Stack.Screen name="Temas" component={Temas} />
   <Stack.Screen name="Sobre" component={Sobre} />
   <Stack.Screen name="Pais" component={Pais} />
+  <Stack.Screen name="Mapa" component={Mapa} />
   </Stack.Navigator>
 );

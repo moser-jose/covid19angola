@@ -4,27 +4,16 @@ import styled from 'styled-components/native';
 export const Container = styled.SafeAreaView`
     flex: 1;
     justify-content:center;
-    padding:20px 20px 10px 20px; 
+    padding:20px 20px 10px 20px;
     background-color:${props=>props.theme.background};
 `;
 
 export const Scroler = styled.View`
     flex: 1;
     width:100%;
+    height:100%;
+    margin-bottom:190px;
 `;
-
-/* export const TituloApp = styled.Text`
-    color:#0E3360;
-    font-size:18px;
-    font-weight:bold;
-    justify-content:flex-start;
-    
-`;
- */
-/* export const Loading = styled.ActivityIndicator`
-    margin:20px 0;
-`; */
-
 export const Search = styled.View`
     margin:30px  0 10px 0;
     flex-direction:row;

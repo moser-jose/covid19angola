@@ -13,8 +13,6 @@ export const Container = styled.SafeAreaView`
 
 export const Scroler = styled.ScrollView`
     flex: 1;
-    
-    
 `;
 export const Loading = styled.ActivityIndicator`
     margin:20px 0;
@@ -63,12 +61,6 @@ export const Dados = styled.View`
 
 export const DadosCont = styled.View`
 `;
-export const Titulo = styled.Text`
-    font-family:"Poppins-Bold";
-    letter-spacing:1px;
-    font-size:14px;
-    color:${props=>props.theme.color};
-`;
 
 export const TextoCont = styled.View`
     flex-direction:row;
@@ -102,4 +94,67 @@ export const TituloDadoCritico = styled.Text`
 `;
 export const DadosCovidAngola = styled.View`
 
+`;
+
+export const DadosPais = styled.View`
+    
+    /* position:absolute; */
+    /* top:-10px; */
+`;
+/* export const Texto = styled.Text`
+font-size:16px;
+    font-family:"Poppins-Bold";
+    color:${props=>props.theme.color};
+    margin-left:4px;
+    background-color:${props=>props.theme.container};;
+`; */
+
+export const Titulo = styled.View`
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+`;
+export const TextoPais = styled.Text`
+    font-size:18px;
+    font-family:"Poppins-Bold";
+    color:${props=>props.theme.color};
+    margin-left:4px;
+`;
+export const Flag = styled.Image`
+`;
+export const TextoContinente = styled.View`
+    flex-direction:row;
+    margin-top:20px;
+`;
+export const TextoContinenteTexto = styled.Text`
+    font-size:12px;
+    font-family:"Poppins-Medium";
+    color:${props=>props.theme.color};
+`;
+export const DadosDetalhes = styled.View`
+    width:100%;
+    margin:1px 1px 20px 1px;
+    background-color:${props=>props.theme.container};;
+    elevation:2;
+    border-radius:8px;
+    padding:10px;
+    margin-top: 20px;
+`;
+export const MapaContainer = styled.View`
+    margin-top:20px;
+    width:100%;
+`;
+export const Botao = styled.TouchableOpacity`
+    justify-content:center;
+    width:100%;
+    align-items:center;
+`;
+export const BotaoText = styled.Text`
+    font-family:"Poppins-Bold";
+    font-size:12px;
+    color:${props=>props.theme.background};
+    background-color:${props=>props.theme.color};
+    padding:4px 30px;
+    border-radius:4px;
+    letter-spacing:1px;
 `;
