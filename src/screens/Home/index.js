@@ -33,6 +33,7 @@ export default () => {
     const [loading, setLoading]=useState(false);
     const [data, setData]=useState([]);
     const [countryInfo, setCountryInfo]=useState([]);
+    const [all, setAll]=useState([]);
     const navigation=useNavigation();
     Numeral.locale('pt-pt');
     const formatarNumero = (stat) =>
@@ -41,12 +42,14 @@ export default () => {
         setLoading(true);
         let res =await Api.getAngolaPais("angola");
             setData(res);
+            setAll(res);
             setLoading(false);
         }
 
 
         const handlerClickPais =()=>{
             navigation.navigate('Mapa',{
+                all:all,
                 data:data,
                 countryInfo:countryInfo
             });
@@ -57,8 +60,10 @@ export default () => {
         const getAngola = async () => {
             setLoading(true);
             let res =await Api.getAngolaPais("angola");
+            let al =await Api.getAngola();
             if (isActive) {
                 setData(res);
+                setAll(al);
                 setCountryInfo(res.countryInfo);
                 setLoading(false);
             }}
@@ -68,7 +73,7 @@ export default () => {
             isActive = false;
         };
     }, []);
-    console.log();
+    
     return(
         <Container>
             

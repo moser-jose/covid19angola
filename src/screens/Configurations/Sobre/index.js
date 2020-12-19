@@ -58,13 +58,13 @@ export default () => {
                 <IconSend fill={state.theme.color} width="22" height="22" />
             </Redes>
 
-            <RedesTextoDef>Veja o site em</RedesTextoDef>
+            {/* <RedesTextoDef>Veja o site em</RedesTextoDef>
             <RedesDev>
                 <RedesTexto>covid19ao.vercel.app</RedesTexto>
                 <Social onPress={() => Linking.openURL('https://covid19ao.vercel.app/')}>
                     <IconSend fill={state.theme.color} width="22" height="22" />
                 </Social>
-            </RedesDev>
+            </RedesDev> */}
             <RedesTextoDef>Contribua com o projecto em</RedesTextoDef>
             <RedesDevDev onPress={() => Linking.openURL('https://www.github.com/moser-jose/covid19angola')}>
                 <RedesTexto>@covid19angola</RedesTexto>

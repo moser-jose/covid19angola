@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE, Marker,Callout } from 'react-native-maps';
 import {useStateValue} from '../state/ContextProvider';
+import Numeral from 'numeral';
+import "numeral/locales/pt-pt";
 const customMapStyleRetro=[
     {
       "elementType": "geometry",
@@ -437,36 +439,126 @@ const Map = styled.View`
     width:100%;
     height:100%;
 `;
-export default({data, countryInfo}) =>{
+const CaloutContainer = styled.View`
+    width:100%;
+    height:100%;
+    padding:10px;
+    border-radius:4px;
+    background-color:${props=>props.theme.container};
+`;
+
+const Pais = styled.View`
+  flex:1;
+  flex-direction:row;
+  width:200px;
+  justify-content:space-between;
+  margin-top:6px;
+`;
+const TextPais = styled.Text`
+    
+`;
+
+const Bandeira = styled.View`
+  width:30px;
+  height:30px;
+  border-radius:15px;
+  overflow:hidden;
+`;
+const Image = styled.Image`
+
+`;
+const Casos = styled.Text`
+    font-family:"Poppins-Medium";
+    font-size:14px;
+    color:${props=>props.theme.color};
+`;
+const Separador = styled.View`
+    height:.7px;
+    width:100%;
+    background-color:${props=>props.theme.color};
+    margin-bottom:8px;
+    margin-top:8px;
+`;
+
+export default({data,all, countryInfo}) =>{
     const [state,dispach]=useStateValue();
+    const [loading,setLoading]=useStateValue(false);
+    const FormatarNumero = (stat) =>
+    stat ? `+${Numeral(stat).format("0.0a")}` : "+0";
     return(
         <Map>
-            <MapView
+            <MapView scrollEnabled={false}
             provider={PROVIDER_GOOGLE}
             style={{width:'100%',height:'100%'}}
             customMapStyle={
               state.theme.color=="#F2F6F8" ? customMapStyleNight : customMapStyleRetro
             }
-        initialRegion={{
+          initialRegion={{
           latitude: countryInfo.lat,
           longitude:  countryInfo.long,
-          latitudeDelta: 6.0922,
-          longitudeDelta: 16.0421    
+          latitudeDelta: 5.0922,
+          longitudeDelta: 15.0421    
             }}
             >
-          {
-              <Marker 
+          <Marker
               coordinate={{
                 latitude: countryInfo.lat,
                 longitude: countryInfo.long,
               }}
-              title={"data.country"}
-              description='Ruas das Palmeiras, 25 \n OKlfjghjghdgfhdjdgdghjg hhhgghgh iuohihik'
-              /* icon={{ 
-                uri: "https://img.icons8.com/plasticine/1x/truck.png" 
-              }} */
-            />
-          }
+              image={state.theme.background=="#F4F7FA" ? require('../assets/img/local.png')
+            :require('../assets/img/local-white.png')}
+            >
+              <Callout tooltip>
+                <CaloutContainer>
+                <Pais >
+                    <Casos style={{fontWeight:'bold', fontSize:18}}>
+                      {data.country}
+                    </Casos>
+                  </Pais>
+                  <Separador></Separador>
+                  <Pais>
+                    <Casos>
+                      Total Casos
+                    </Casos>
+                    <Casos style={{color:"#FFF",padding:4,borderRadius:4, elevation:2, backgroundColor:'#007BFF', fontWeight:'bold'}}>
+                      {FormatarNumero(data.cases)}
+                    </Casos>
+                  </Pais>
+                  <Pais>
+                    <Casos>
+                      Activos
+                    </Casos>
+                    <Casos style={{color:"#FFF",padding:4,borderRadius:4, elevation:2, backgroundColor:'#ff8040', fontWeight:'bold'}}>
+                      {FormatarNumero(data.active)}
+                    </Casos>
+                  </Pais>
+                  <Pais>
+                    <Casos>
+                      Críticos
+                    </Casos>
+                    <Casos style={{color:"#FFF",padding:4,borderRadius:4, elevation:2, backgroundColor:'#f1c40f', fontWeight:'bold'}}>
+                      {FormatarNumero(data.critical)}
+                    </Casos>
+                  </Pais>
+                  <Pais>
+                    <Casos>
+                      Recuperados
+                    </Casos>
+                    <Casos style={{color:"#FFF",padding:4,borderRadius:4, elevation:2, backgroundColor:'#21BA4F', fontWeight:'bold'}}>
+                      {FormatarNumero(data.recovered)}
+                    </Casos>
+                  </Pais>
+                  <Pais>
+                    <Casos>
+                      Mortes
+                    </Casos>
+                    <Casos style={{color:"#FFF",padding:4,borderRadius:4, elevation:2, backgroundColor:'#FF3131', fontWeight:'bold'}}>
+                      {FormatarNumero(data.deaths)}
+                    </Casos>
+                  </Pais>
+                </CaloutContainer>
+              </Callout>
+            </Marker>
             
             </MapView>
           </Map>

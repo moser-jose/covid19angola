@@ -117,7 +117,7 @@ const VermaisTexo= styled.Text`
 `;
 
 
-export default ({dados}) => {
+export default ({dados, all}) => {
     Numeral.locale('pt-pt');
     const navigation=useNavigation();
     return( 
@@ -136,6 +136,7 @@ export default ({dados}) => {
         stat ? `+${Numeral(stat).format("0.0a")}` : "+0";
         const handlerClickPais =()=>{
             navigation.navigate('Pais',{
+                all:all,
                 country:country,
                 active: active,
                 countryInfo:countryInfo,
@@ -160,7 +161,6 @@ export default ({dados}) => {
                     source={{uri:`${countryInfo.flag}`}}
                     style={{ width: 60, height: 60, resizeMode:'cover' }}
                 >
-
                 </Image>
             </Imagem>
             <PaisContainer>

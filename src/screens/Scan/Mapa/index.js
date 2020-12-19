@@ -18,6 +18,7 @@ import {
 export default () => {
   const route=useRoute();
   const [mapa, setMapa]=useState({
+    all:route.params.all,
     data: route.params.data,
     countryInfo: route.params.countryInfo
 });
@@ -28,7 +29,7 @@ export default () => {
           <Voltar></Voltar>
           </Container>
           <Mund>
-            <Mapa data={mapa.data} countryInfo={mapa.countryInfo}></Mapa>
+            <Mapa all={mapa.all} data={mapa.data} countryInfo={mapa.countryInfo}></Mapa>
           </Mund>
         </ContainerMap>
     );

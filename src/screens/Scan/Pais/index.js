@@ -33,6 +33,7 @@ export default () => {
     const prettyPrintStat = (stat) =>
     stat ? `+${Numeral(stat).format("0.0a")}` : "+0";
     const [paisInfo, setpaisInfo]=useState({
+        all:route.params.all,
         country: route.params.country,
         active: route.params.active,
         countryInfo: route.params.countryInfo,
@@ -50,6 +51,7 @@ export default () => {
     
     const handelerClick =()=>{
         navigation.navigate('Mapa',{
+            all:paisInfo.all,
             data:paisInfo,
             countryInfo:paisInfo.countryInfo
         });

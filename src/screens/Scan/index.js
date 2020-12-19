@@ -23,13 +23,15 @@ export default () => {
     const [loading, setLoading]=useState(false);
     const [data, setData]=useState([]);
     const [copia, setDataCopia]=useState([]);
+    const [all, setAll]=useState([]);
 
     const getPaises = async () => {
         setLoading(true);
         let res =await Api.getAngola();
+        let al =await Api.getAngola();
         setData(res);
         setDataCopia(res);
-        
+        setAll(al);
         setLoading(false);
         
     }
@@ -48,7 +50,6 @@ export default () => {
     useEffect(()=>{
         getPaises();
     },[]);
-    console.log(data);
     return(
         <Container>
                 <ContainerTituloDiferente titulo="Tracker" bandeira={2}>
@@ -72,7 +73,7 @@ export default () => {
                 {loading==true ? <Loading size="large" color={state.theme.color}></Loading>
                 :
                 <View style={{marginTop:20}}>
-                    <Pais dados={data}></Pais>
+                    <Pais dados={data} all={all}></Pais>
                 </View>
                 
                 }

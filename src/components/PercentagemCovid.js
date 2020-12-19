@@ -72,7 +72,7 @@ export default({dados}) =>{
     
     return(
             <Container>
-                <Separador titulo={"Percentagens do Covid19"} descricao={"Distribuição de acordo aos activos recuperados e mortos "}></Separador>
+                <Separador titulo={"Percentagens da Covid-19"} descricao={"Distribuição de acordo aos activos, recuperados e mortos "}></Separador>
                 <DivCont>
                     
                 <VictoryPie 
