@@ -144,7 +144,7 @@ changeLanguage = (language, data) => () => {
                     );
                 }}
                 </LanguageContext.Consumer>
-                    <Barra></Barra>
+                   {/*  <Barra></Barra>
                     
           
                     <ContainerTexto  onPress={handleClickFrances}>
@@ -165,7 +165,7 @@ changeLanguage = (language, data) => () => {
                                     <IconUnCheck fill={state.theme.color} width="20" height="20"  style={{justifyContent:'center', alignSelf:'center'}}></IconUnCheck>
                                 }
                     </ContainerTexto>
-                    
+                     */}
                 </ConstainerSetting>
             </Scroler>
         </Container>

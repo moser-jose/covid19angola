@@ -3,18 +3,9 @@ import translations from '../assets/locales/locale';
 
 export const LanguageContext = React.createContext();
 
-class LanguageProvider extends React.Component {/* 
-    time=this.props.lang.local; */
+class LanguageProvider extends React.Component {
     constructor(props) {
         super(props);
-       /*  this.state = {
-            language: this.time,
-            translations: 
-            this.time=='pt_PT' ?
-             translations.pt_PT
-             :
-             this.time=='en_US' && translations.en_US
-        } */
         this.changeLanguage=this.changeLanguage.bind(this);
     }
     

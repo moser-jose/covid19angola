@@ -7,6 +7,7 @@ import FilterIcon from '../../assets/img/Bulk-Filter.svg';
 import Pais from '../../components/Pais';
 import Api from '../../api/Api';
 import {useStateValue} from '../../state/ContextProvider';
+import {useStateValueLang} from '../../state/ContextLang';
 
 import Text from '../../components/Text';
 import { 
@@ -26,6 +27,7 @@ export default () => {
     const [data, setData]=useState([]);
     const [copia, setDataCopia]=useState([]);
     const [all, setAll]=useState([]);
+    const [lang, setlang] = useStateValueLang()
 
     const getPaises = async () => {
         setLoading(true);
@@ -50,9 +52,31 @@ export default () => {
         setData(newData);
     };
     useEffect(()=>{
+        async function getStorageLang (){
+            const Idioma= await AsyncStorage.getItem("idioma");
+            if(Idioma=== '1'){
+                setlang({
+                  type:'en_US'
+                });
+                return;
+            }
+            else if(Idioma==='2'){
+              setlang({
+                type:'pt_PT'
+              });
+              return;
+            }
+            else{
+              setlang({
+                type:'fr_FR'
+              });
+              return;
+            }
+          
+          } 
+          getStorageLang();
         getPaises();
     },[]);
-    
     return(
         <Container>
                 <ContainerTituloDiferente titulo={<Text text='pesquisar.titulo'/>} bandeira={2}>
@@ -63,14 +87,21 @@ export default () => {
                 <Search>
                     <SearchDiv>
                         <ScanIcon stroke={state.theme.firstIconSearch} fill={state.theme.background} width="16" heigth="16"></ScanIcon>
-                        
-                        <Input 
-                        
-                        /* placeholder={<Text text='pesquisar.titulo'/>} */
+
+
+                        {lang.locale.local =='en_US' ?<Input 
+                        placeholder="Enter a country name"
                         autoCapitalize="none"
                         autoCorrect={false}
                         onChangeText={query=>this.filtrar(query)}
-                        ></Input>
+                        ></Input>:<Input 
+                        
+                        placeholder="Introduza o nome de um país"
+                        autoCapitalize="none"
+                        autoCorrect={false}
+                        onChangeText={query=>this.filtrar(query)}
+                        ></Input> }
+                        
                         
                     </SearchDiv>
                     <Filter><FilterIcon fill={state.theme.secondIconSearch}></FilterIcon></Filter>

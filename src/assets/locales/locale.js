@@ -148,7 +148,7 @@ export default {
             placeHolder:'Enter a country name',
             continente:'Continent',
             populacao:'Population',
-            verMapa:'See Map',
+            verMapa:'See map',
             totalCasos:'Total Cases',
             ativos:'Actives',
             criticos:'Criticals',
