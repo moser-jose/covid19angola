@@ -9,7 +9,7 @@ import Febres from '../../assets/img/Fever';
 import LavarMaos from '../../assets/img/Hand-Wash';
 import Home from '../../assets/img/Stay-Home';
 import Tosse from '../../assets/img/Cough';
-
+import Text from '../../components/Text';
 import {useStateValue} from '../../state/ContextProvider';
 import { 
     Container,
@@ -30,64 +30,64 @@ export default () => {
     const [state, dispach]=useStateValue();
     return(
         <Container>
-                <ContainerTitulo titulo="Emergência" bandeira={1}>
+                <ContainerTitulo titulo={<Text text='emergencia.titulo'/>} bandeira={1}>
                 </ContainerTitulo>
                 <Scroler>
                     <TesteCovid></TesteCovid>
                     <TextoCovidTitulo>
-                        Contactos de Emergência
+                    <Text text='emergencia.contatosEmergencia'/>
                     </TextoCovidTitulo>
                     <TextoCovid>
-                        Se você tiver febre, tosse e dificuldade para respirar e tiver estado recentemente no exterior ou tiver estado em contacto próximo com alguém confirmado com COVID-19, entre em contacto com um dos centros hospitalares mais próximo a si.
+                    <Text text='emergencia.texto'/>
                     </TextoCovid>
                     <NumerosEmergencia>
                     </NumerosEmergencia>
                     <TextoCovidTitulo>
-                        Recomendações
+                    <Text text='emergencia.recomendacao'/>
                     </TextoCovidTitulo>
                     <TextoCovid>
-                        Proteja-se e proteja as pessoas que amas.
+                    <Text text='emergencia.descricao'/>
                     </TextoCovid>
 
                     <Recomendacao>
                         <Recom>
                             <Info>
                                 <Mascara fill={state.theme.color}></Mascara>
-                                <Texto>Use sempre a mascara facial</Texto>
+                                <Texto><Text text='emergencia.mascara'/></Texto>
                             </Info>
                             <Info>
                                 <SocialDistance fill={state.theme.color}></SocialDistance>
-                                <Texto>Evite o contacto físico a menos de 2 metros</Texto>
+                                <Texto><Text text='emergencia.distacia'/></Texto>
                             </Info>
                         </Recom>
                         <Recom>
                             <Info>
                                 <Febres fill={state.theme.color}></Febres>
-                                <Texto>Sintomas do Covid19, ligue para os números de emergência</Texto>
+                                <Texto><Text text='emergencia.sintomas'/></Texto>
                             </Info>
                             <Info>
                                 <LavarMaos fill={state.theme.color}></LavarMaos>
-                                <Texto>Lave e desinfecte sempre as mãos</Texto>
+                                <Texto><Text text='emergencia.lavar'/></Texto>
                             </Info>
                         </Recom>
                         <Recom>
                             <Info>
                                 <Home fill={state.theme.color}> </Home>
-                                <Texto>Fique em casa, só saia se for necessário</Texto>
+                                <Texto><Text text='emergencia.casa'/></Texto>
                             </Info>
                             <Info>
                                 <Tosse fill={state.theme.color}></Tosse>
-                                <Texto>Se tossir tape a boca</Texto>
+                                <Texto><Text text='emergencia.tosse'/></Texto>
                             </Info>
                         </Recom>
                     
                     </Recomendacao>
                     <Fonte>
                         <TextoFonte>
-                            Fonte:
+                        <Text text='emergencia.fonte'/>:
                         </TextoFonte>
                         <TextoFonteLink  onPress={() => Linking.openURL('https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public')}>
-                            Organização Mundial de Saúde
+                        <Text text='emergencia.org'/>
                         </TextoFonteLink>
                     </Fonte>
                 </Scroler>

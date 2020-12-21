@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components/native';
 import Numeral from 'numeral';
 import "numeral/locales/pt-pt";
+import Text from './Text';
 const Container = styled.View`
     flex:1;
     justify-content:center;
@@ -111,7 +112,7 @@ export default({dados,active,cases,deaths,critical,recovered}) =>{
                         }
                         <NovosCasos style={{color:"#007BFF"}}>[{prettyPrintStat(dados.todayCases)}]</NovosCasos>
                         <TotalCasos style={{color:"#0078FF"}}>{prettyPrintStat(dados.cases)}</TotalCasos>
-                        <CasoAtivo>Total casos</CasoAtivo>
+                        <CasoAtivo><Text text='pesquisar.totalCasos'/></CasoAtivo>
                     </Casos>
                     <Casos onPress={handlerClickActive}>
                         {
@@ -120,7 +121,7 @@ export default({dados,active,cases,deaths,critical,recovered}) =>{
                         
                         <NovosCasos></NovosCasos>
                         <TotalCasos style={{color:"#ff8040"}}>{prettyPrintStat(dados.active)}</TotalCasos>
-                        <CasoAtivo >Activos</CasoAtivo>
+                        <CasoAtivo ><Text text='pesquisar.ativos'/></CasoAtivo>
                     </Casos>
                     <Casos onPress={handlerClickCritical}>
                         {
@@ -128,7 +129,7 @@ export default({dados,active,cases,deaths,critical,recovered}) =>{
                         }
                         <NovosCasos></NovosCasos>
                         <TotalCasos style={{color:"#FFBB33"}}>{prettyPrintStat(dados.critical)}</TotalCasos>
-                        <CasoAtivo >Estado critíco</CasoAtivo>
+                        <CasoAtivo ><Text text='resultados.estadoCritico'/></CasoAtivo>
 
                     </Casos>
                     <Casos onPress={handlerClickRecovered}>
@@ -137,7 +138,7 @@ export default({dados,active,cases,deaths,critical,recovered}) =>{
                         }
                         <NovosCasos style={{color:"#21BA4F"}}>[{prettyPrintStat(dados.todayRecovered)}]</NovosCasos>
                         <TotalCasos style={{color:"#21BA4F"}}>{prettyPrintStat(dados.recovered)}</TotalCasos>
-                        <CasoAtivo >Recuperados</CasoAtivo>
+                        <CasoAtivo ><Text text='resultados.recuperados'/></CasoAtivo>
                         
                     </Casos>
                     <Casos onPress={handlerClickDeaths}>
@@ -146,7 +147,7 @@ export default({dados,active,cases,deaths,critical,recovered}) =>{
                         }
                         <NovosCasos style={{color:"#FF3131"}}>[{prettyPrintStat(dados.todayDeaths)}]</NovosCasos>
                         <TotalCasos style={{color:"#FF3131"}}>{prettyPrintStat(dados.deaths)}</TotalCasos>
-                        <CasoAtivo>Mortes</CasoAtivo>
+                        <CasoAtivo><Text text='resultados.mortes'/></CasoAtivo>
                     </Casos>
                 </DivCont>
             </Container>

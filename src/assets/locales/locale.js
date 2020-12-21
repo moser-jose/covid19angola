@@ -2,6 +2,27 @@ export default {
     pt_PT: {
         local:'pt_PT',
         voltar:'Voltar',
+        splash:{
+            titulo:'Proteja-se a si e a sua família',
+            benvindo:'Bem Vindo',
+            versao:'Versão',
+            pular:'Pular',
+            splash1:{
+                titulo:'Use a mascara',
+                texto:'Use sempre a mascara facial quando estiver próximo as pessoas e sempre que estiver a fazer um trabalho.',
+                botao:'Próximo',
+            },
+            splash2:{
+                titulo:'Lave as mãos',
+                texto:'Lave e desinfecte sempre as mãos, depois de ter contacto com alguém ou alguma coisa.',
+                botao:'Próximo',
+            },
+            splash3:{
+                titulo:'Esteja Seguro',
+                texto:'Se estiver com os sintomas da Covid-19, ligue para os contactos de emergência.',
+                botao:'Começar',
+            }
+        },
         testeCovid:{
             titulo: 'Fique em casa',
             texto: 'A Covid-19 é uma doença altamente transmissível, fique em casa e esteja seguro'
@@ -100,13 +121,36 @@ export default {
             },
             idiomas:{
                 titulo:'Idiomas',
-                texto:'Altere o idioma do App.'
+                texto:'Altere o idioma do App.',
+                portugues:'Português',
+                ingles:'Inglês'
             }
         }
     },
     en_US: {
         local:'en_US',
         voltar:'Back',
+        splash:{
+            titulo:'Protect yourself and your family',
+            benvindo:'Welcome',
+            versao:'Version',
+            pular:'Skip',
+            splash1:{
+                titulo:'use the mask',
+                texto:'Always wear a face mask when you are close to people and whenever you are doing work.',
+                botao:'Next',
+            },
+            splash2:{
+                titulo:'Wash the hands',
+                texto:'Always wash and disinfect your hands after contact with someone or something',
+                botao:'Next',
+            },
+            splash3:{
+                titulo:'Be safe',
+                texto:'If you have Covid-19 symptoms, call the emergency contacts',
+                botao:'Start',
+            }
+        },
         testeCovid:{
             titulo: 'Stay in Home',
             texto: 'Covid-19 is a highly communicable disease, stay at home and be safe'
@@ -172,7 +216,7 @@ export default {
             org:'World Health Organization'
         },
         mundo:{
-            titulo: 'For the World',
+            titulo: 'In the World',
             totalCasos:'Total Cases',
             estadoCritico:'Critical condition',
             testesRealizados: 'Tests',
@@ -182,12 +226,12 @@ export default {
         },
         configuracao:{
             titulo: 'Settings',
-            tema:'Thems',
+            tema:'Themes',
             idioma:'Language',
             partilha:'Share the App',
             sobre:'About the App',
             temas:{
-                titulo:'Thems',
+                titulo:'Themes',
                 texto:'Change the theme and adjust the display settings.',
                 claro:'Light',
                 escuro:'Dark',
@@ -205,7 +249,9 @@ export default {
             },
             idiomas:{
                 titulo:'Languages',
-                texto:'Change the language of the App'
+                texto:'Change the language of the App',
+                portugues:'Portuguese',
+                ingles:'English'
             }
         }
     },

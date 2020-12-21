@@ -4,6 +4,7 @@ import styled from 'styled-components/native';
 import ApiEmergencia from '../api/ApiEmergencia.json';
 import {Linking} from 'react-native';
 import {useStateValue} from '../state/ContextProvider';
+import Text from '../components/Text';
 const NumerosEmergencia = styled.View`
     flex:1;
     elevation:2;

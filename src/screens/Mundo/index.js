@@ -3,6 +3,7 @@ import MundoCovid from '../../components/MundoCovid';
 import Api from '../../api/Api';
 import ContainerTitulo from '../../components/ContainerTitulo';
 import {useStateValue} from '../../state/ContextProvider';
+import Text from '../../components/Text';
 const customMapStyleRetro=[
     {
       "elementType": "geometry",
@@ -509,7 +510,7 @@ export default () => {
         <ContainerMap>
           
           <TituloMundo>
-            <ContainerTitulo titulo={"Pelo Mundo"} bandeira={2}></ContainerTitulo>
+            <ContainerTitulo titulo={<Text text='mundo.titulo'/>} bandeira={2}></ContainerTitulo>
           </TituloMundo>
 
           {loading==true ? 

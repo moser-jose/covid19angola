@@ -1,6 +1,7 @@
 import React,{useEffect} from 'react';
 import { useNavigation } from '@react-navigation/native';
 import {useStateValue} from '../../state/ContextProvider';
+import Text from '../../components/Text';
 import { 
     Container,
     IconLoading,
@@ -34,7 +35,7 @@ export default () => {
             <Logo width="100%" height="120" />
             <TituloApp>
                 <TituloBold>Covid-19 Angola</TituloBold>
-                <TituloLightItalic>Proteja-se a si e a sua família </TituloLightItalic>
+                <TituloLightItalic><Text text='splash.titulo'/> </TituloLightItalic>
             </TituloApp>
            <IconLoad>
             <IconLoading size="large"  color={state.theme.color}>
@@ -42,8 +43,8 @@ export default () => {
                 </IconLoading>
            </IconLoad>
             <BemvindoApp>
-                <BemvindoAppText>Bem Vindo</BemvindoAppText>
-                <BemvindoAppVersao>Versão 1.0.1</BemvindoAppVersao>
+                <BemvindoAppText><Text text='splash.benvindo'/></BemvindoAppText>
+                <BemvindoAppVersao><Text text='splash.versao'/> 1.0.1</BemvindoAppVersao>
             </BemvindoApp>
         </Container>
     );

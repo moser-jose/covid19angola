@@ -1,10 +1,9 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import styled from 'styled-components/native';
 import IconRefresh from '../assets/img/refresh.svg';
-import moment, { now } from 'moment';
+import moment from 'moment';
 import 'moment/locale/pt';
 import {useStateValue} from '../state/ContextProvider';
-import App from '../assets/locales';
 import Text from './Text';
 const Container = styled.View`
     width:100%;

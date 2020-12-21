@@ -7,6 +7,7 @@ import Email from '../../../assets/img/email.svg';
 import IconSend from '../../../assets/img/IconSend.svg';
 import Voltar from '../../../components/Voltar';
 import {useStateValue} from '../../../state/ContextProvider';
+import Text from '../../../components/Text';
 import {  
     Container,
     Scroller,
@@ -34,13 +35,13 @@ export default () => {
             <Logo width="100%" height="120" />
             <TituloApp>
                 <TituloBold>Covid-19 Angola</TituloBold>
-                <TituloLightItalic>Proteja-se a si e a sua família </TituloLightItalic>
+                <TituloLightItalic><Text text='configuracao.sobres.titulo'/></TituloLightItalic>
             </TituloApp>
-                <RedesTexto style={{lineHeight:18, marginBottom:20, marginTop:20}}>App Mobile para visualização das estatísticas da Covid-19 em Angola e ao redor do mundo.</RedesTexto>
+                <RedesTexto style={{lineHeight:18, marginBottom:20, marginTop:20}}><Text text='configuracao.sobres.descricao'/></RedesTexto>
                 
-                <Vers><Versao>Versão 1.0.1</Versao></Vers>
+                <Vers><Versao><Text text='configuracao.sobres.versao'/> 1.0.1</Versao></Vers>
             
-                <RedesTextoDef>Agradecimentos</RedesTextoDef>
+                <RedesTextoDef><Text text='configuracao.sobres.agradecimentos'/></RedesTextoDef>
             <Redes onPress={() => Linking.openURL('https://github.com/disease-sh/api')}>
                 <RedesTexto>Disease.sh</RedesTexto>
                 <IconSend fill={state.theme.color} width="22" height="22" />
@@ -54,7 +55,7 @@ export default () => {
                 <IconSend fill={state.theme.color} width="22" height="22" />
             </Redes>
             <Redes onPress={() => Linking.openURL('https://www.uplabs.com/posts/covid-19-illustrations')}>
-                <RedesTexto>@manojkeet</RedesTexto>
+                <RedesTexto>manojkeet</RedesTexto>
                 <IconSend fill={state.theme.color} width="22" height="22" />
             </Redes>
 
@@ -65,7 +66,7 @@ export default () => {
                     <IconSend fill={state.theme.color} width="22" height="22" />
                 </Social>
             </RedesDev> */}
-            <RedesTextoDef>Contribua com o projecto em</RedesTextoDef>
+            <RedesTextoDef><Text text='configuracao.sobres.contribuicao'/></RedesTextoDef>
             <RedesDevDev onPress={() => Linking.openURL('https://www.github.com/moser-jose/covid19angola')}>
                 <RedesTexto>@covid19angola</RedesTexto>
                 <Social >
@@ -74,7 +75,7 @@ export default () => {
                 
             </RedesDevDev>
             
-            <RedesTextoDef>Envie sugestões para</RedesTextoDef>
+            <RedesTextoDef><Text text='configuracao.sobres.sugestoes'/></RedesTextoDef>
             <RedesDevDev onPress={() => Linking.openURL('mailto:mosmmy@gmail.com')}>
                 <RedesTexto>mosmmy@gmail.com</RedesTexto>
                 <Social >
@@ -82,7 +83,7 @@ export default () => {
                 </Social>
                 
             </RedesDevDev>
-            <RedesTextoDef>Developer</RedesTextoDef>
+            <RedesTextoDef><Text text='configuracao.sobres.desenvol'/></RedesTextoDef>
             <RedesDev>
                 <RedesTexto>@moser-jose</RedesTexto>
                 <Social onPress={() => Linking.openURL('https://www.codepen.io/moser-jose')}>

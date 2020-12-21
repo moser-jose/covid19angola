@@ -6,6 +6,7 @@ import IconUnCheck from '../../../assets/img/IconUncheck.svg';
 import {useStateValue} from '../../../state/ContextProvider';
 import AsyncStorage from '@react-native-community/async-storage';
 import Voltar from '../../../components/Voltar';
+import Text from '../../../components/Text';
 import { 
     Container,
     Scroler,
@@ -82,11 +83,11 @@ useEffect(()=>{
         <Container>
             <Voltar></Voltar>
             <Scroler>
-                <TextoTema>Temas</TextoTema>
-                <TextoTemaLight>Altere o tema e ajuste as configurações de exibição.</TextoTemaLight>
+                <TextoTema><Text text='configuracao.temas.titulo'/></TextoTema>
+                <TextoTemaLight><Text text='configuracao.temas.texto'/></TextoTemaLight>
                 <ConstainerSetting>
                     <ContainerTexto onPress={handleClickLight}>
-                        <Texto>Claro</Texto>
+                        <Texto><Text text='configuracao.temas.claro'/></Texto>
                         {
                             light ? 
                             
@@ -97,7 +98,7 @@ useEffect(()=>{
                     </ContainerTexto>
                     <Barra></Barra>
                     <ContainerTexto  onPress={handleClickDark}>
-                        <Texto>Escuro</Texto>
+                        <Texto><Text text='configuracao.temas.escuro'/></Texto>
                         {
                                     dark ? 
                                     
@@ -110,9 +111,9 @@ useEffect(()=>{
                     <Barra></Barra>
                     <ContainerTexto  onPress={handleClickPhone}>
                         <Dispositivo>
-                            <Texto>Automático</Texto>
+                            <Texto><Text text='configuracao.temas.automatico'/></Texto>
                             <TextoDispositivo>
-                                Usar as configurações do dispositivo
+                            <Text text='configuracao.temas.desc'/>
                             </TextoDispositivo>
                         </Dispositivo>
                         {

@@ -10,6 +10,7 @@ import {useNavigation} from '@react-navigation/native';
 import Api from '../../api/Api';
 import Numeral from 'numeral';
 import "numeral/locales/pt-pt";
+import Text from '../../components/Text';
 import { 
     Container,
     Scroler,
@@ -103,7 +104,7 @@ export default () => {
                         <Titulo>
                             <TextoContinente>
                                 <TextoContinenteTexto>
-                                    Continente: 
+                                <Text text='pesquisar.continente'/>: 
                                 </TextoContinenteTexto>
                                 <TextoContinenteTexto style={{fontWeight:"bold", marginLeft:5}}>
                                     { data.continent}
@@ -111,7 +112,7 @@ export default () => {
                             </TextoContinente>
                             <TextoContinente>
                                 <TextoContinenteTexto >
-                                    População: 
+                                <Text text='pesquisar.populacao'/>: 
                                 </TextoContinenteTexto>
                                 <TextoContinenteTexto style={{fontWeight:"bold", marginLeft:5}}>
                                 {formatarNumero(data.population)}
@@ -123,7 +124,7 @@ export default () => {
                     <MapaContainer>
                         <Botao onPress={handlerClickPais}>
                             <BotaoText>
-                                Ver Mapa
+                            <Text text='pesquisar.verMapa'/>
                             </BotaoText>
                         </Botao>
                     </MapaContainer>

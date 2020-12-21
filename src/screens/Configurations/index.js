@@ -11,7 +11,7 @@ import IconInfo from '../../assets/img/IconInfo.svg';
 import Idioma from '../../assets/img/Idioma.svg';
 import IconPrivacidade from '../../assets/img/privacidade.svg';
 import IconTermos from '../../assets/img/termos.svg';
-
+import Text from '../../components/Text';
 import {useStateValue} from '../../state/ContextProvider';
 import {useNavigation} from '@react-navigation/native';
 import { 
@@ -47,19 +47,19 @@ export default () => {
     }
     return(
         <Container>
-            <ContainerTitulo titulo="Configurações" bandeira={1}></ContainerTitulo>
+            <ContainerTitulo titulo={<Text text='configuracao.titulo'/>} bandeira={1}></ContainerTitulo>
             <Scroler>
                 <TesteCovid></TesteCovid>
                 <ConstainerSetting>
                     <ContainerTexto onPress={handleClickTema}>
                         <Icon fill={state.theme.color} width="20" height="20"></Icon>
-                        <Texto>Temas</Texto>
+                        <Texto><Text text='configuracao.tema'/></Texto>
                         <IconNext fill={state.theme.color} width="20" height="20"></IconNext>
                     </ContainerTexto>
                     <Barra></Barra>
                     <ContainerTexto onPress={handleClickIdioma}>
                         <Idioma fill={state.theme.color} width="20" height="20"></Idioma>
-                        <Texto>Idioma</Texto>
+                        <Texto><Text text='configuracao.idioma'/></Texto>
                         <IconNext fill={state.theme.color} width="20" height="20"></IconNext>
                     </ContainerTexto>
                     {/* <Barra></Barra>
@@ -77,7 +77,7 @@ export default () => {
                     <Barra></Barra>
                     <ContainerTexto onPress={handleClickShare}>
                         <IconShare fill={state.theme.color} width="20" height="20"></IconShare>
-                        <Texto>Partilhar o App</Texto>
+                        <Texto><Text text='configuracao.partilha'/></Texto>
                         <IconNext fill={state.theme.color} width="20" height="20"></IconNext>
                     </ContainerTexto>
                    {/*  <Barra></Barra>
@@ -95,7 +95,7 @@ export default () => {
                     <Barra></Barra>
                     <ContainerTexto onPress={handleClickSobre}>
                         <IconInfo fill={state.theme.color} width="20" height="20"></IconInfo>
-                        <Texto>Sobre o App</Texto>
+                        <Texto><Text text='configuracao.sobre'/></Texto>
                         <IconNext fill={state.theme.color} width="20" height="20"></IconNext>
                     </ContainerTexto>
                 </ConstainerSetting>

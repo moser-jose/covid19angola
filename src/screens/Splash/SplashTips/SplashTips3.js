@@ -3,6 +3,7 @@ import ProximoBotao from '../../../components/Tips/ProximoBotao';
 import {DotBold, DotLight} from '../../../components/Tips/Pontinhos';
 import styled from 'styled-components/native';
 import Distanciamento from '../../../assets/img/seguro.svg';
+import Text from '../../../components/Text';
 const Container = styled.SafeAreaView`
     flex: 1;
     align-items: center;
@@ -67,14 +68,14 @@ export default SplashTips3 = props => {
      return (
         <Container>
             <PularB onPress={() =>props.navigation.reset({routes:[{name:'MainTab'}]})}>
-            <Skip>Pular</Skip></PularB>
+            <Skip><Text text='splash.pular'/></Skip></PularB>
          <SubContainer>
             <Imagem>
                 <Distanciamento width="300" height="230"></Distanciamento>
             </Imagem>
-            <TextoTitulo style={{marginVertical:10}}>Esteja Seguro</TextoTitulo>
-            <TextoCorpo >Se estiver com os sintomas da Covid-19, ligue para os contactos de emergência.</TextoCorpo>
-            <ProximoBotao onClick={() => props.navigation.reset({routes:[{name:'MainTab'}]})}>Começar</ProximoBotao>
+            <TextoTitulo style={{marginVertical:10}}><Text text='splash.splash3.titulo'/></TextoTitulo>
+            <TextoCorpo ><Text text='splash.splash3.texto'/></TextoCorpo>
+            <ProximoBotao onClick={() => props.navigation.reset({routes:[{name:'MainTab'}]})}><Text text='splash.splash3.botao'/></ProximoBotao>
             <FooterContainer>
                 <DotLight onp={() => props.navigation.navigate("SplashTips1")} />
                 <DotLight onp={() => props.navigation.navigate("SplashTips2")} />

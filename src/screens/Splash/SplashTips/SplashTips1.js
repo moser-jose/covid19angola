@@ -3,6 +3,7 @@ import ProximoBotao from '../../../components/Tips/ProximoBotao';
 import {DotBold, DotLight} from '../../../components/Tips/Pontinhos';
 import styled from 'styled-components/native';
 import Mascara from '../../../assets/img/mascarasplash.svg';
+import Text from '../../../components/Text';
 const Container = styled.SafeAreaView`
     flex: 1;
     align-items: center;
@@ -65,14 +66,14 @@ export default SplashTips1 = props => {
      return (
         <Container>
             <PularB onPress={() =>props.navigation.reset({routes:[{name:'MainTab'}]})}>
-            <Skip>Pular</Skip></PularB>
+            <Skip><Text text='splash.pular'/></Skip></PularB>
          <SubContainer>
             <Imagem>
                 <Mascara width="300" height="230"></Mascara>
             </Imagem>
-            <TextoTitulo style={{marginVertical:10}}>Use a mascara</TextoTitulo>
-            <TextoCorpo >Use sempre a mascara facial quando estiver próximo as pessoas e sempre que estiver a fazer um trabalho.</TextoCorpo>
-            <ProximoBotao onClick={() => props.navigation.navigate("SplashTips2")}>Próximo</ProximoBotao>
+            <TextoTitulo style={{marginVertical:10}}><Text text='splash.splash1.titulo'/></TextoTitulo>
+            <TextoCorpo ><Text text='splash.splash1.texto'/></TextoCorpo>
+            <ProximoBotao onClick={() => props.navigation.navigate("SplashTips2")}><Text text='splash.splash1.botao'/></ProximoBotao>
             <FooterContainer>
                 <DotBold/>
                 <DotLight onp={() => props.navigation.navigate("SplashTips2")} />

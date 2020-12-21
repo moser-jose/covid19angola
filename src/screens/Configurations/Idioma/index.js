@@ -7,7 +7,6 @@ import {useStateValueLang} from '../../../state/ContextLang';
 import Text from '../../../components/Text'; 
 import AsyncStorage from '@react-native-community/async-storage';
 import Voltar from '../../../components/Voltar';
-import App from '../../../assets/locales';
 import LanguageProvider,{ LanguageContext } from '../../../state/LanguageContext';
 import { 
     Container,
@@ -105,7 +104,7 @@ changeLanguage = (language, data) => () => {
                                     borderRadius:10, 
                                     resizeMode: 'cover' }}></Image>
                             </Imagem>
-                            <Texto>Inglês</Texto>
+                            <Texto><Text text='configuracao.idiomas.ingles'/></Texto>
                             {
                                 ingles ? 
                                 
@@ -131,7 +130,7 @@ changeLanguage = (language, data) => () => {
                                 borderRadius:10, 
                                 resizeMode: 'cover' }}></Image>
                         </Imagem>
-                        <Texto>Português</Texto>
+                        <Texto><Text text='configuracao.idiomas.portugues'/></Texto>
                         {
                                     portugues ? 
                                     
