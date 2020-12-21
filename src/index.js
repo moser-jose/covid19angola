@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from 'react';
+import React from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
 import { StateProvider } from "./state/ContextProvider";
 import {StateProviderLang} from './state/ContextLang'; 
@@ -70,7 +70,7 @@ export default function index(){
                     updateStorageLAng("3");
                 return{
                     ...state,
-                    locale:Local.en_US
+                    locale:Local.pt_PT
                 };
             default:
                 return state;

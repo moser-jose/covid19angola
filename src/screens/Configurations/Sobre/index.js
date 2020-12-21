@@ -46,7 +46,7 @@ export default () => {
                 <RedesTexto>Disease.sh</RedesTexto>
                 <IconSend fill={state.theme.color} width="22" height="22" />
             </Redes>
-            <Redes onPress={() => Linking.openURL('https://instagram.com/piqodesin')}>
+            <Redes onPress={() => Linking.openURL('https://instagram.com/piqodesign')}>
                 <RedesTexto>Piqodesign</RedesTexto>
                 <IconSend fill={state.theme.color} width="22" height="22" />
             </Redes>

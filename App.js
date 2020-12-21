@@ -54,7 +54,7 @@ export default () => {
       }
       else{
         dispachLang({
-          type:'fr_FR'
+          type:'pt_PT'
         });
         return;
       }

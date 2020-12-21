@@ -35,29 +35,6 @@ App Mobile para as estatísticas do Covid-19 em Angola e ao redor do mundo, feit
 
 Todos os requisitos aqui listados são indispensáveis para o desenvolvimento do projecto.
 
-### Bibliotecas Instalados
-
-#### Os pacotes podem ser instalados a partir do `npm` ou `yarn`
-
-    "@react-native-community/async-storage": "^1.12.1",
-    "@react-native-community/masked-view": "^0.1.10",
-    "@react-navigation/bottom-tabs": "^5.11.2",
-    "@react-navigation/native": "^5.8.10",
-    "@react-navigation/stack": "^5.12.8",
-    "moment": "^2.29.1",
-    "numeral": "^2.0.6",
-    "react": "16.13.1",
-    "react-native": "0.63.4",
-    "react-native-gesture-handler": "^1.9.0",
-    "react-native-maps": "0.27.1",
-    "react-native-reanimated": "^1.13.2",
-    "react-native-safe-area-context": "^3.1.9",
-    "react-native-screens": "^2.15.0",
-    "react-native-svg": "^12.1.0",
-    "react-native-svg-transformer": "^0.14.3",
-    "styled-components": "^5.2.1",
-    "victory-native": "^35.3.1"
-
 ### Android
 
 #### Ferramentas necessárias para a construção:
