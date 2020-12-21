@@ -8,6 +8,7 @@ import IconApp from '../../assets/img/IconApp.svg';
 import IconFeedback from '../../assets/img/IconFeedback.svg';
 import IconShare from '../../assets/img/share.svg';
 import IconInfo from '../../assets/img/IconInfo.svg';
+import Idioma from '../../assets/img/Idioma.svg';
 import IconPrivacidade from '../../assets/img/privacidade.svg';
 import IconTermos from '../../assets/img/termos.svg';
 
@@ -31,6 +32,10 @@ export default () => {
     const handleClickSobre =()=>{
         navigation.navigate('Sobre');
     }
+
+    const handleClickIdioma =()=>{
+        navigation.navigate('Idioma');
+    }
     const handleClickShare=()=>{
         Share.share({
             title:"Covid-19 Angola",
@@ -49,6 +54,12 @@ export default () => {
                     <ContainerTexto onPress={handleClickTema}>
                         <Icon fill={state.theme.color} width="20" height="20"></Icon>
                         <Texto>Temas</Texto>
+                        <IconNext fill={state.theme.color} width="20" height="20"></IconNext>
+                    </ContainerTexto>
+                    <Barra></Barra>
+                    <ContainerTexto onPress={handleClickIdioma}>
+                        <Idioma fill={state.theme.color} width="20" height="20"></Idioma>
+                        <Texto>Idioma</Texto>
                         <IconNext fill={state.theme.color} width="20" height="20"></IconNext>
                     </ContainerTexto>
                     {/* <Barra></Barra>

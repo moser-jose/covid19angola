@@ -6,6 +6,7 @@ import Sobre from '../screens/Configurations/Sobre/';
 import Pais from '../screens/Scan/Pais';
 import Mapa from '../screens/Scan/Mapa';
 import Splash from '../screens/Splash';
+import Idioma from '../screens/Configurations/Idioma';
 import SplashTips1 from '../screens/Splash/SplashTips/SplashTips1';
 import SplashTips2 from '../screens/Splash/SplashTips/SplashTips2';
 import SplashTips3 from '../screens/Splash/SplashTips/SplashTips3';
@@ -30,5 +31,6 @@ export default () => (
   <Stack.Screen name="Sobre" component={Sobre} />
   <Stack.Screen name="Pais" component={Pais} />
   <Stack.Screen name="Mapa" component={Mapa} />
+  <Stack.Screen name="Idioma" component={Idioma} />
   </Stack.Navigator>
 );

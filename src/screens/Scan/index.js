@@ -7,6 +7,8 @@ import FilterIcon from '../../assets/img/Bulk-Filter.svg';
 import Pais from '../../components/Pais';
 import Api from '../../api/Api';
 import {useStateValue} from '../../state/ContextProvider';
+
+import Text from '../../components/Text';
 import { 
     Container,
     Scroler,
@@ -50,9 +52,10 @@ export default () => {
     useEffect(()=>{
         getPaises();
     },[]);
+    
     return(
         <Container>
-                <ContainerTituloDiferente titulo="Tracker" bandeira={2}>
+                <ContainerTituloDiferente titulo={<Text text='pesquisar.titulo'/>} bandeira={2}>
                 </ContainerTituloDiferente>
  
             <Scroler >
@@ -60,12 +63,15 @@ export default () => {
                 <Search>
                     <SearchDiv>
                         <ScanIcon stroke={state.theme.firstIconSearch} fill={state.theme.background} width="16" heigth="16"></ScanIcon>
+                        
                         <Input 
-                            placeholder="Introduza o nome de um país"
-                            autoCapitalize="none"
-                            autoCorrect={false}
-                            onChangeText={query=>this.filtrar(query)}
-                            ></Input>
+                        
+                        /* placeholder={<Text text='pesquisar.titulo'/>} */
+                        autoCapitalize="none"
+                        autoCorrect={false}
+                        onChangeText={query=>this.filtrar(query)}
+                        ></Input>
+                        
                     </SearchDiv>
                     <Filter><FilterIcon fill={state.theme.secondIconSearch}></FilterIcon></Filter>
                 </Search>

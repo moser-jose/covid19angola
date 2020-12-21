@@ -8,7 +8,7 @@ import CasesIcon from '../assets/img/cases';
 import TestsIcon from '../assets/img/tests';
 import Numeral from 'numeral';
 import "numeral/locales/pt-pt";
-
+import Text from './Text';
 const Container = styled.View`
     flex:1;
     justify-content:center;
@@ -118,7 +118,7 @@ export default({dados}) =>{
                 <DadosAngola>
                             <Dados>
                                 <DadosCont>
-                                    <Titulo>Total de Casos</Titulo>
+                                    <Titulo><Text text='resultados.totalCasos'/></Titulo>
                                     <TextoCont>
                                         <CasesIcon width="24" height="24"></CasesIcon>
                                         <TituloDadoNew>[{formatarNumero(dados.todayCases)}]</TituloDadoNew>
@@ -128,7 +128,7 @@ export default({dados}) =>{
                             </Dados>
                             <Dados>
                                 <DadosCont>
-                                <TituloDadoCritico>Estado crítico</TituloDadoCritico>
+                                <TituloDadoCritico><Text text='resultados.estadoCritico'/></TituloDadoCritico>
                                         <TextoCont>
                                         <CriticosIcon width="24" height="24"></CriticosIcon>
                                         <TituloDado >{formatarNumero(dados.critical)}</TituloDado>
@@ -142,7 +142,7 @@ export default({dados}) =>{
                                 <DadosCont style={{width:'100%'}}>
                                         
                                     <TextoCont style={{marginTop:0}}>
-                                    <Titulo >Testes realizados</Titulo>
+                                    <Titulo ><Text text='resultados.testesRealizados'/></Titulo>
                                         <TestsIcon width="24" height="24"></TestsIcon>
                                     </TextoCont>
                                     <TituloDado style={{marginTop:10}}>{formatarNumero(dados.tests)}</TituloDado>
@@ -154,21 +154,21 @@ export default({dados}) =>{
                         <IconAtivosAzul></IconAtivosAzul>
                         <NovosCasos></NovosCasos>
                         <TotalCasos style={{color:"#ff8040"}}>{formatarNumero(dados.active)}</TotalCasos>
-                        <CasoAtivo style={{color:"#ff8040"}}>Activos</CasoAtivo>
+                        <CasoAtivo style={{color:"#ff8040"}}><Text text='resultados.activos'/></CasoAtivo>
                         
                     </Casos>
                     <Casos>
                         <IconVerdeClaro></IconVerdeClaro>
                         <NovosCasos style={{color:"#21BA4F"}}>[{formatarNumero(dados.todayRecovered)}]</NovosCasos>
                         <TotalCasos style={{color:"#21BA4F"}}>{formatarNumero(dados.recovered)}</TotalCasos>
-                        <CasoAtivo style={{color:"#21BA4F"}}>Recuperados</CasoAtivo>
+                        <CasoAtivo style={{color:"#21BA4F"}}><Text text='resultados.recuperados'/></CasoAtivo>
                         
                     </Casos>
                     <Casos>
                         <IconMortes></IconMortes>
                         <NovosCasos style={{color:"#FF3131"}}>[{formatarNumero(dados.todayDeaths)}]</NovosCasos>
                         <TotalCasos style={{color:"#FF3131"}}>{formatarNumero(dados.deaths)}</TotalCasos>
-                        <CasoAtivo style={{color:"#FF3131"}}>Mortes</CasoAtivo>
+                        <CasoAtivo style={{color:"#FF3131"}}><Text text='resultados.mortes'/></CasoAtivo>
                     </Casos>
                 </DivCont>
             </Container>

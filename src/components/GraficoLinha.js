@@ -9,6 +9,7 @@ import {VictoryScatter,VictoryLine,VictoryLabel,VictoryAxis, VictoryChart, Victo
 import moment from 'moment';
 import 'moment/locale/pt';
 
+import Text from './Text';
 const DivGraf = styled.View`
     flex:1;
 `;
@@ -80,7 +81,7 @@ export function GraficoLinhaCasos({country}) {
         : 
         dataCasos?.length > 0 && (
           <DivGraf>
-    <Separador titulo={"Novos Casos"} descricao={"Novos casos da Covid-19 nos Últimos 7 dias"}></Separador>
+    <Separador titulo={<Text text='graficoLinhaCasos.titulo'/>} descricao={<Text text='graficoLinhaCasos.descricao'/>}></Separador>
     <DivCont onLayout={(event) => {
         var {x, y, width, height} = event.nativeEvent.layout;
         setWidth(width);
@@ -159,7 +160,7 @@ export function GraficoLinhaRecuperados({country}) {
         : 
         dataRecuperdos?.length > 0 && (
           <DivGraf>
-    <Separador titulo={"Novos Recuperados"} descricao={"Novos recuperados da Covid-19 nos Últimos 7 dias"}></Separador>
+    <Separador titulo={<Text text='graficoLinhaRecuperados.titulo'/>} descricao={<Text text='graficoLinhaRecuperados.descricao'/>}></Separador>
     <DivCont onLayout={(event) => {
         var {x, y, width, height} = event.nativeEvent.layout;
         setWidth(width);
@@ -240,7 +241,7 @@ export function GraficoLinhaMortes({country}) {
         : 
         dataMortes?.length > 0 && (
           <DivGraf>
-    <Separador titulo={"Novas Mortes"} descricao={"Novas mortes da Covid-19 nos Últimos 7 dias"}></Separador>
+    <Separador titulo={<Text text='graficoLinhaMortes.titulo'/>} descricao={<Text text='graficoLinhaMortes.descricao'/>}></Separador>
     <DivCont onLayout={(event) => {
         var {x, y, width, height} = event.nativeEvent.layout;
         setWidth(width);

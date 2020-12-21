@@ -5,7 +5,6 @@ import {useNavigation,useRoute} from '@react-navigation/native';
 import Voltar from '../../../components/Voltar';
 import Mapa from '../../../components/MapaPais';
 
-
 import { 
     Container,
     ContainerMap,

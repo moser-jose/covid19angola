@@ -3,6 +3,7 @@ import styled from 'styled-components/native';
 import {useStateValue} from '../state/ContextProvider';
 import Logo from '../assets/img/logo.svg';
 
+import Text from './Text';
 const TituloApp = styled.Text`
     color:${props=>props.theme.color};
     font-size:18px;

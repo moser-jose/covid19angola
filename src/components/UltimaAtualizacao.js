@@ -4,7 +4,8 @@ import IconRefresh from '../assets/img/refresh.svg';
 import moment, { now } from 'moment';
 import 'moment/locale/pt';
 import {useStateValue} from '../state/ContextProvider';
-
+import App from '../assets/locales';
+import Text from './Text';
 const Container = styled.View`
     width:100%;
     flex-direction:row;
@@ -38,12 +39,13 @@ const Texto = styled.Text`
 export default({onp,dados}) =>{
     const [state,dispach]=useStateValue();
     moment.locale('pt');
+    
     return(
         <Container>
             <ContainerDireita>
-                <Titulo>Novos Resultados</Titulo>
+                <Titulo><Text text='ultimaAtualizacao.titulo'/></Titulo>
                 
-                <Texto>Última Atualização: {moment(dados).format('LLL')}</Texto>
+                <Texto><Text text='ultimaAtualizacao.texto'/>: {moment(dados).format('LLL')}</Texto>
             </ContainerDireita>
             <ContainerEsquerda onPress={onp}>
                 <IconRefresh fill={state.theme.color}></IconRefresh>

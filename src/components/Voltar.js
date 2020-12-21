@@ -3,6 +3,7 @@ import IconBack from '../assets/img/IconBack.svg';
 import {useNavigation} from '@react-navigation/native';
 import {useStateValue} from '../state/ContextProvider';
 import styled from 'styled-components/native';
+import Text from './Text';
 
 const Voltar = styled.Text`
     font-size:16px;
@@ -28,7 +29,7 @@ export default () => {
     return(
         <Back onPress={handleClickBack}>
             <IconBack fill={state.theme.color} width="26" height="26"></IconBack>
-            <Voltar>Voltar</Voltar>
+            <Voltar><Text text='voltar'/></Voltar>
         </Back>
     );
 }

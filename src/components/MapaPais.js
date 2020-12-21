@@ -4,6 +4,8 @@ import MapView, { PROVIDER_GOOGLE, Marker,Callout } from 'react-native-maps';
 import {useStateValue} from '../state/ContextProvider';
 import Numeral from 'numeral';
 import "numeral/locales/pt-pt";
+
+import Text from './Text';
 const customMapStyleRetro=[
     {
       "elementType": "geometry",
@@ -518,7 +520,7 @@ export default({data,all, countryInfo}) =>{
                   <Separador></Separador>
                   <Pais>
                     <Casos>
-                      Total Casos
+                    <Text text='pesquisar.totalCasos'/>
                     </Casos>
                     <Casos style={{color:"#FFF",padding:4,borderRadius:4, elevation:2, backgroundColor:'#007BFF', fontWeight:'bold'}}>
                       {FormatarNumero(data.cases)}
@@ -526,7 +528,7 @@ export default({data,all, countryInfo}) =>{
                   </Pais>
                   <Pais>
                     <Casos>
-                      Activos
+                    <Text text='pesquisar.ativos'/>
                     </Casos>
                     <Casos style={{color:"#FFF",padding:4,borderRadius:4, elevation:2, backgroundColor:'#ff8040', fontWeight:'bold'}}>
                       {FormatarNumero(data.active)}
@@ -534,7 +536,7 @@ export default({data,all, countryInfo}) =>{
                   </Pais>
                   <Pais>
                     <Casos>
-                      Críticos
+                    <Text text='pesquisar.criticos'/>
                     </Casos>
                     <Casos style={{color:"#FFF",padding:4,borderRadius:4, elevation:2, backgroundColor:'#f1c40f', fontWeight:'bold'}}>
                       {FormatarNumero(data.critical)}
@@ -542,7 +544,7 @@ export default({data,all, countryInfo}) =>{
                   </Pais>
                   <Pais>
                     <Casos>
-                      Recuperados
+                    <Text text='pesquisar.recuperados'/>
                     </Casos>
                     <Casos style={{color:"#FFF",padding:4,borderRadius:4, elevation:2, backgroundColor:'#21BA4F', fontWeight:'bold'}}>
                       {FormatarNumero(data.recovered)}
@@ -550,7 +552,7 @@ export default({data,all, countryInfo}) =>{
                   </Pais>
                   <Pais>
                     <Casos>
-                      Mortes
+                    <Text text='pesquisar.mortes'/>
                     </Casos>
                     <Casos style={{color:"#FFF",padding:4,borderRadius:4, elevation:2, backgroundColor:'#FF3131', fontWeight:'bold'}}>
                       {FormatarNumero(data.deaths)}

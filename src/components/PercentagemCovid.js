@@ -3,6 +3,7 @@ import styled from 'styled-components/native';
 import Separador from './Separador';
 import { VictoryPie } from "victory-native";
 import {GraficoLinhaCasos,GraficoLinhaRecuperados,GraficoLinhaMortes} from './GraficoLinha';
+import Text from './Text';
 const Container = styled.View`
     flex:1;
     justify-content:center;
@@ -72,7 +73,7 @@ export default({dados}) =>{
     
     return(
             <Container>
-                <Separador titulo={"Percentagens da Covid-19"} descricao={"Distribuição de acordo aos activos, recuperados e mortos "}></Separador>
+                <Separador titulo={<Text text='perentagemCovid.titulo'/>} descricao={<Text text='perentagemCovid.descricao'/>}></Separador>
                 <DivCont>
                     
                 <VictoryPie 
@@ -89,17 +90,17 @@ export default({dados}) =>{
                     <DadosPerc>
                         <Casos style={{width:20, height:20, borderRadius:10,backgroundColor:"#ff8040"}}>
                         </Casos>
-                        <TotalCasos>Activos</TotalCasos>
+                        <TotalCasos><Text text='perentagemCovid.ativos'/></TotalCasos>
                     </DadosPerc>
                     <DadosPerc>
                     <Casos style={{width:20, height:20, borderRadius:10,backgroundColor:"#21BA4F"}}>
                     </Casos>
-                        <TotalCasos>Recuperados</TotalCasos>
+                        <TotalCasos><Text text='perentagemCovid.recuperados'/></TotalCasos>
                     </DadosPerc>
                     <DadosPerc >
                     <Casos style={{width:20, height:20, borderRadius:10,backgroundColor:"#FF3131"}}>
                     </Casos>
-                        <TotalCasos>Mortes</TotalCasos>
+                        <TotalCasos><Text text='perentagemCovid.mortes'/></TotalCasos>
                     </DadosPerc>
                     
                 </DivContperc>

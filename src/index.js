@@ -1,14 +1,17 @@
-import React from 'react';
+import React,{useEffect, useState} from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
-import { StateProvider } from "./state/ContextProvider"
+import { StateProvider } from "./state/ContextProvider";
+import {StateProviderLang} from './state/ContextLang'; 
 import { useColorScheme } from 'react-native';
+import Local from '../src/assets/locales/locale'
 import App from '../App'
 import Themes from './assets/themes/themes';
 
 export default function index(){
     const device=useColorScheme();
-    const initialState = {theme:Themes.light};
-
+    const initialState = {theme:Themes.light}; 
+    const initialStateLang = {locale:Local.en_US}; ; 
+    
     async function updateStorage(state){
         try{
             await AsyncStorage.setItem("Theme", state.toString())
@@ -17,7 +20,14 @@ export default function index(){
             console.log("Houve um erro "+err);
         }
     }
-
+    async function updateStorageLAng(state){
+        try{
+            await AsyncStorage.setItem("idioma", state.toString())
+        }
+        catch(err){
+            console.log("Houve um erro "+err);
+        }
+    }
     const reducer =(state, action)=>{
         switch(action.type){
             case 'lighTheme':
@@ -42,11 +52,39 @@ export default function index(){
                 return state;
         }
     }
-
+    const reducerLang =(state, action)=>{
+        switch(action.type){
+            case 'en_US':
+                updateStorageLAng("1");
+                return{
+                    ...state,
+                    locale:Local.en_US
+                };
+            case 'pt_PT':
+                updateStorageLAng("2");
+                return{
+                    ...state,
+                    locale:Local.pt_PT
+                };
+                case 'fr_FR':
+                    updateStorageLAng("3");
+                return{
+                    ...state,
+                    locale:Local.en_US
+                };
+            default:
+                return state;
+        }
+    }
+    
     return(
-        <StateProvider initialState={initialState} reducer={reducer}>
-            <App/>
-        </StateProvider>
+        
+            <StateProvider initialState={initialState} reducer={reducer}>
+                <StateProviderLang initialState={initialStateLang}  reducer={reducerLang}>
+        <App/>
+</StateProviderLang>
+             
+            </StateProvider>
+        
     );
-
 }

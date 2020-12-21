@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import UserCovid from '../assets/img/user_covid.svg';
-
+import Text from './Text';
 const Container = styled.View`
     background-color:#FF4B63;
     width:100%;
@@ -42,8 +42,8 @@ export default() =>{
                     <UserCovid></UserCovid>
                 </ContainerDireita>
                 <ContainerEsquerda>
-                    <Titulo>Fique em casa</Titulo>
-                    <Texto>A Covid-19 é uma doença altamente transmissível, fique em casa e esteja seguro.</Texto>
+                    <Titulo><Text text='testeCovid.titulo'/></Titulo>
+                    <Texto><Text text='testeCovid.texto'/></Texto>
                 </ContainerEsquerda>
 
             </Container>

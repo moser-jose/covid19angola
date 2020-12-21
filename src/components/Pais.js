@@ -5,7 +5,7 @@ import Api from '../api/Api';
 import Numeral from 'numeral';
 import "numeral/locales/pt-pt";
 import {useNavigation} from '@react-navigation/native';
-
+import Text from './Text';
 const Pais = styled.View`
     background-color:${props=>props.theme.container};;
     elevation:2;
@@ -167,28 +167,28 @@ export default ({dados, all}) => {
                 <NomePais>{country}</NomePais>
                 <DadosPais>
                     <DadosCont>
-                        <NomePaisDados>Continente: </NomePaisDados>
+                        <NomePaisDados><Text text='pesquisar.continente'/>: </NomePaisDados>
                         <NomePaisDadosValor>{continent}</NomePaisDadosValor>
                     </DadosCont>
                     <Populacao>
-                        <NomePaisDados>População: </NomePaisDados>
+                        <NomePaisDados><Text text='pesquisar.populacao'/>: </NomePaisDados>
                         <NomePaisDadosValor>{prettyPrintStat(population)}</NomePaisDadosValor>
                     </Populacao>
                 </DadosPais>
                 <DadosCovid>
                     <DadosCovidLeft>
-                        <Casos style={{color:'#ff8040'}}>Activos</Casos>
+                        <Casos style={{color:'#ff8040'}}><Text text='pesquisar.ativos'/></Casos>
                         <Novo style={{color:'#ff8040'}}>[{prettyPrintStat(todayCases)}]</Novo>
                         <Novo style={{color:'#ff8040'}}>{prettyPrintStat(cases)}</Novo>
                         
                     </DadosCovidLeft>
                     <DadosCovidMidlle>
-                        <Casos style={{color:'#21BA4F'}}>Recuperados</Casos>
+                        <Casos style={{color:'#21BA4F'}}><Text text='pesquisar.recuperados'/></Casos>
                         <Novo style={{color:'#21BA4F'}}>[{prettyPrintStat(todayRecovered)}]</Novo>
                         <Novo style={{color:'#21BA4F'}}>{prettyPrintStat(recovered)}</Novo>
                     </DadosCovidMidlle>
                     <DadosCovidRight>
-                        <Casos style={{color:'#FF3131'}}>Mortes</Casos>
+                        <Casos style={{color:'#FF3131'}}><Text text='pesquisar.mortes'/></Casos>
                         <Novo style={{color:'#FF3131'}}>[{prettyPrintStat(todayDeaths)}]</Novo>
                         <Novo style={{color:'#FF3131'}}>{prettyPrintStat(deaths)}</Novo>
                     </DadosCovidRight>
@@ -196,7 +196,7 @@ export default ({dados, all}) => {
             </PaisContainer>
         </Dados>
         <Vermais onPress={handlerClickPais}>
-            <VermaisTexo >Ver Mais</VermaisTexo>
+            <VermaisTexo ><Text text='pesquisar.verMais'/></VermaisTexo>
         </Vermais>
     </Pais>    
 
