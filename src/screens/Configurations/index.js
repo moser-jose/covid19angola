@@ -39,8 +39,8 @@ export default () => {
     const handleClickShare=()=>{
         Share.share({
             title:"Covid-19 Angola",
-            url:"www.google.com",
-            message:"Instale o App Covid-19 Angola e tenha todas as informações das estatísticas da Covid-19 em Angola e ao redor do mundo. Faça o download em www.google.com"
+            url:"https://github.com/moser-jose/covid19angola",
+            message:"Instale o App Covid-19 Angola e tenha todas as informações das estatísticas da Covid-19 em Angola e ao redor do mundo. Faça o download em https://github.com/moser-jose/covid19angola/releases/download/v1.0.1/Covid-19.Angola.apk"
         },{
             dialogTitle:"Partilhe o App Covid-19 Angola"
         })

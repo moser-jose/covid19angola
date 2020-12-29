@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components/native';
 import { FlatList,Image } from 'react-native';
-import Api from '../api/Api';
 import Numeral from 'numeral';
 import "numeral/locales/pt-pt";
 import {useNavigation} from '@react-navigation/native';
@@ -9,9 +8,10 @@ import Text from './Text';
 const Pais = styled.View`
     background-color:${props=>props.theme.container};;
     elevation:2;
-    padding:10px;
+    
     border-radius:4px;
     margin:1px;
+    padding:10px;
     margin-bottom:10px;
 `;
 
